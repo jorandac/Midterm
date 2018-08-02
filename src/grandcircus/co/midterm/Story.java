@@ -10,6 +10,9 @@ public class Story {
 		
 		System.out.println("His ninja monkeys would often bow down to him through out the day, which typically would "
 				+ "boost his ego");  
+		
+		System.out.println("Today, however, was not a typical day. When he emerged from his yurt, his trusty ninja"
+				+ " monkeys eyed him suspiciously.");
 	}
 
 }
