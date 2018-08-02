@@ -1,5 +1,13 @@
-Espresso
-Cappucino
-Cafe Americano
-Cafe Latte
-
+Espresso	lorem ipsum dolor sit amet	2.25
+Cappucino	lorem ipsum dolor sit amet	2.50
+Cafe Americano	lorem ipsum dolor sit amet	3.25
+Cafe Latte	lorem ipsum dolor sit amet	1.50
+Chai Tea	lorem ipsum dolor sit amet	2.75
+Black Tea	lorem ipsum dolor sit amet	1.25
+Green Tea	lorem ipsum dolor sit amet	1.50
+Blueberry Muffin	lorem ipsum dolor sit amet	2.50
+Pumpkin Spice Muffin	lorem ipsum dolor sit amet	2.50
+Banana Bread	lorem ipsum dolor sit amet	2.50
+Chocolate Chip Cookie	lorem ipsum dolor sit amet	1.25
+Oatmeal Raisin Cookie	lorem ipsum dolor sit amet	1.25
+Breakfast Sandwich	lorem ipsum dolor sit amet	4.25
