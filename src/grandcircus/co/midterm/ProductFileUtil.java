@@ -1,5 +1,12 @@
 package grandcircus.co.midterm;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class ProductFileUtil {
 
 	// The path to the file to use
@@ -15,4 +22,41 @@ public class ProductFileUtil {
 		product.setPrice(Double.parseDouble(products[2]));
 		return product;
 	}
+
+	// Modify this method as necessary to convert an item instance to a line of text
+	// in the file
+	private static String convertItemToLine(Product product) {
+		return String.format("%s\t%d\t%s", product.getName(), product.getDescription(), product.getPrice());
+	}
+
+	// Read File Method
+	public static List<Product> readFile() {
+		List<Product> items = new ArrayList<>();
+
+		try (
+				// Open/prepare the resources in the try resources block
+				FileInputStream fileInputStream = new FileInputStream(FILE_NAME);
+				Scanner fileScanner = new Scanner(fileInputStream)) {
+			// loop until the end of the file
+			while (fileScanner.hasNextLine()) {
+				// read each line as a string
+				String line = fileScanner.nextLine();
+				// then convert it to an object
+				items.add(convertLineToItem(line));
+			}
+
+		} catch (FileNotFoundException ex) {
+			// If the file doesn't exist, there just aren't any items.
+			return items;
+		} catch (IOException e) {
+			// If something else crazy goes wrong, print out the error.
+			System.err.println("Something unexpected happended.");
+			e.printStackTrace();
+		}
+
+		// Finally return the array of items.
+		return items;
+
+	}
+
 }
