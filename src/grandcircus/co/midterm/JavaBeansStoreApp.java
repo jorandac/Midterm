@@ -12,9 +12,19 @@ public class JavaBeansStoreApp {
 		// New Product ArrayList
 		List<Product> menu = ProductFileUtil.readFile();
 
+		//TODO: Welcome message
 		// Display Menu
 		StoreMethods.displayMenu(menu);
 
+		//TODO: Ask user to choose item
+		//TODO: get user input
+		
+			//TODO: if user chooses drink, ask for hot or cold choice
+			//TODO: if user chooses sandwich, ask for options:
+				//TODO: meat, cheese, egg/no egg, bread
+			//TODO: store user choice in ArrayList
+		
+		//Ask to add 
 	}
 
 }
