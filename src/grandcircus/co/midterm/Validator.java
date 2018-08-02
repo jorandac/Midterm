@@ -151,11 +151,10 @@ public class Validator {
 			}
 		} while (!isValid);
 		return date;
-
 	}
 
 	/*
-	 * Validates yes or no
+	 * Validates Yes or No
 	 */
 
 	public static String YesOrNo(Scanner scnr, String prompt) {

@@ -14,6 +14,4 @@ public class StoreMethods {
 	
 	//Store payment info to .txt file
 	
-	
-	
 }
