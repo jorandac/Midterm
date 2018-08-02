@@ -1,11 +1,11 @@
 package grandcircus.co.midterm;
 
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class StoreMethods {
 
 	// display menu
-
 	public static void displayMenu(List<Product> products) {
 
 		int num = 1;
@@ -55,7 +55,30 @@ public class StoreMethods {
 	}
 	// Credit Card Method (input card information)
 
+	public static void creditCardMethod() {
+
+		// Credit card number
+		int randomCreditCardNumber = ThreadLocalRandom.current().nextInt(1, 16 + 1);
+
+		// Random Exp Date
+		int randomExpDate = ThreadLocalRandom.current().nextInt(1, 4 + 1);
+
+		// Random cvv
+		int randomCvv = ThreadLocalRandom.current().nextInt(1, 3 + 1);
+
+		System.out.println(
+				"Card Number: " + randomCreditCardNumber + "Exp Date: " + randomExpDate + " Cvv: " + randomCvv);
+
+	}
+
 	// Check Method (input check number)
+	public static void checkMethod() {
+		// Check number
+		int randomCheckNumber = ThreadLocalRandom.current().nextInt(1, 4 + 1);
+
+		System.out.println(randomCheckNumber + "#");
+
+	}
 
 	// Display receipt
 	public static void displayReceipt() {
