@@ -24,6 +24,11 @@ public class Check extends Payment {
 	public void setCheckNum(int checkNum) {
 		this.checkNum = checkNum;
 	}
+
+	@Override
+	public String toString() {
+		return "Check [checkNum=" + checkNum + "]";
+	}
 	
 	
 	
