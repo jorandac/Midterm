@@ -1,5 +1,6 @@
 package grandcircus.co.midterm;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,6 +14,10 @@ public class JavaBeansStoreApp {
 		List<Product> menu = ProductFileUtil.readFile();
 
 		//TODO: Welcome message
+
+		// Shopping cart
+		List<Product> shoppingCart = new ArrayList<>(); // TODO push to repository
+
 		// Display Menu
 		StoreMethods.displayMenu(menu);
 
