@@ -21,6 +21,8 @@ public class JavaBeansStoreApp {
 		// Display Menu
 		StoreMethods.displayMenu(menu);
 
+		//TODO: do/while loop starts here
+		
 		//TODO: Ask user to choose item
 		//TODO: get user input
 		
@@ -29,7 +31,17 @@ public class JavaBeansStoreApp {
 				//TODO: meat, cheese, egg/no egg, bread
 			//TODO: store user choice in ArrayList
 		
-		//Ask to add 
+		//TODO: Ask if user wants to add more items , loop ends here
+		
+		//TODO: display subtotal
+		
+		//TODO: ask for payment type Switch/Case
+			
+				//cash - call cash method
+				//credit - call credit method, write to file
+				//check - call check method, write to file
+		
+		//TODO: display receipt
 	}
 
 }
