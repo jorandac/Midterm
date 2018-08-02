@@ -4,29 +4,31 @@ public class Cash extends Payment {
 
 	private double changeDue;
 
-	//Default Constructor 
-	
+	// Default Constructor
+
 	public Cash() {
-		
+
 	}
 	
 	//Constructor 
-	public Cash(String paymentType, double amount, double changeDue) {
+ 	Cash(String paymentType, double amount, double changeDue) {
 		super(paymentType, amount);
 		this.changeDue = changeDue;
 	}
 
-	//Getter 
+	// Getter
 	public double getChangeDue() {
 		return changeDue;
 	}
-    //Setter 
+
+	// Setter
 	public void setChangeDue(double changeDue) {
 		this.changeDue = changeDue;
 	}
-    //To String 
+
+	// To String
 	@Override
 	public String toString() {
 		return "Cash [changeDue=" + changeDue + "]";
-	} 
+	}
 }
