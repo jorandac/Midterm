@@ -20,32 +20,42 @@ public class StoreMethods {
 
 	}
 
-	// Display total
-	public static void displayTotal(List<Product> shoppingCart) {
-		int num = 1;
+	// Get Total
+	public static double getTotal(List<Product> shoppingCart) {
+
 		double total = 0;
 		double salesTax = 0.06;
 
 		for (Product product : shoppingCart) {
 
-			System.out.println(num + ". " + product);
-
-			num++;
-
 			total += product.getPrice();
 		}
 
-		System.out.println("Your Subtotal is: " + total);
-
-		System.out.println("Your Total with tax is: " + total * salesTax);
+		return total * salesTax;
 
 	}
 
-	// Cash Method
+	// Display total
+	public static void displayTotal(double total) {
 
-	// Credit Card Method
+		System.out.println("Your Total with tax is: " + total);
 
-	// Check Method
+	}
+
+	// Cash Method (Return change)
+
+	public static double cashMethod(double amount, double total) {
+
+		// Calculates change and returns string to call when printing receipt
+
+		double change = total - amount;
+
+		return change;
+
+	}
+	// Credit Card Method (input card information)
+
+	// Check Method (input check number)
 
 	// Display receipt
 	public static void displayReceipt() {
