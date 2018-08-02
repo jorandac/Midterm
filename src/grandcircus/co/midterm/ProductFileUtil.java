@@ -2,7 +2,9 @@ package grandcircus.co.midterm;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -57,6 +59,27 @@ public class ProductFileUtil {
 		// Finally return the array of items.
 		return items;
 
+	}
+
+	// Write to file
+	public static void writeFile(List<Product> items) {
+		try (
+				// The `false` here tells the FileOutputStream to overwrite the file, rather
+				// than append to it
+				FileOutputStream fileOutputStream = new FileOutputStream(FILE_NAME, false);
+				PrintWriter fileWriter = new PrintWriter(fileOutputStream);) {
+			// write to the file
+			for (Product item : items) {
+				// each item must be converted to a string of text to write to the file
+				String line = convertItemToLine(item);
+				fileWriter.println(line);
+			}
+
+		} catch (IOException e) {
+			// If something else crazy goes wrong, print out the error.
+			System.err.println("Something unexpected happended.");
+			e.printStackTrace();
+		}
 	}
 
 }
