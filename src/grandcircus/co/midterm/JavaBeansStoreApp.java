@@ -12,6 +12,7 @@ public class JavaBeansStoreApp {
 		// New Country ArrayList
 		List<Product> menu = ProductFileUtil.readFile();
 
+		// Display Menu
 		StoreMethods.displayMenu(menu);
 
 	}
