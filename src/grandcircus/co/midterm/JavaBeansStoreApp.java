@@ -13,7 +13,8 @@ public class JavaBeansStoreApp {
 		// New Product ArrayList
 		List<Product> menu = ProductFileUtil.readFile();
 
-		//TODO: Welcome message
+		System.out.println("Welcome to Java Beans!\n");
+		System.out.println("Please choose an item from our menu: ");
 
 		// Shopping cart
 		List<Product> shoppingCart = new ArrayList<>(); // TODO push to repository
@@ -36,7 +37,22 @@ public class JavaBeansStoreApp {
 		//TODO: display subtotal
 		
 		//TODO: ask for payment type Switch/Case
-			
+		int paymentChoice = Validator.getInt(scnr, "\nHow would you like to pay? "
+				+ "(Choose 1 for cash, 2 for credit, or 3 for check): ", 1, 3);
+		System.out.println(); // blank line for readability
+		
+		switch (paymentChoice) {
+			case 1:
+				//cashMethod
+				break;
+			case 2:
+				//creditMethod
+				break;
+			case 3:
+				//check method
+				break;
+				
+		}
 				//cash - call cash method
 				//credit - call credit method, write to file
 				//check - call check method, write to file
