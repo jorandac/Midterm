@@ -20,8 +20,6 @@ public class StoreMethods {
 
 	}
 
-	// Choose item
-
 	// Display total
 	public static void displayTotal(List<Product> shoppingCart) {
 		int num = 1;
@@ -37,15 +35,23 @@ public class StoreMethods {
 			total += product.getPrice();
 		}
 
-		System.out.println("Your Subtotal is " + total);
+		System.out.println("Your Subtotal is: " + total);
 
-		System.out.println("Your Total with tax is " + total * salesTax);
+		System.out.println("Your Total with tax is: " + total * salesTax);
 
 	}
 
-	// Get payment
+	// Cash Method
+
+	// Credit Card Method
+
+	// Check Method
 
 	// Display receipt
+	public static void displayReceipt() {
+		System.out.println("Thank for shopping at Java Beans!");
+		System.out.println("Your total is: ");
+	}
 
 	// Store payment info to .txt file
 
