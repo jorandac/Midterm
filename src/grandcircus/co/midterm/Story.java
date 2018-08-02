@@ -4,9 +4,13 @@ public class Story {
 
 	public static void main(String[] args) {
 		System.out.println("Once upon a time in the mystical land of "
-				+ "Shangrila there dwelt an immortal named Kai-Yun and his " + "trusty band of students.");
+<<<<<<< HEAD
+				+ "Detroit there dwelt an immortal named David and his " + "trusty band of students.");
+=======
+				+ "downtown Detroit there dwelt an immortal named David and his " + "trusty band of students.");
+>>>>>>> edfc9eea0ced4e8b51757e04d22d45f4c34042dd
 
-		System.out.println("Kai-Yun was very defient at all times, and lived by the beat by his own drum.");
+		System.out.println("David was very defient at all times, and lived by the beat by his own drum.");
 
 		System.out.println("His students would often bow down to him through out the day, which typically would "
 				+ "boost his ego");
@@ -16,10 +20,16 @@ public class Story {
 
 		System.out.println("He thought to himself, Is he initiating a challenge? "
 				+ " and prepared his mind, body and soul for the battle to come");
+<<<<<<< HEAD
 
 		System.out.println("But it wasn't your typical battle, His students challenged him to a dance battle");
 
 		System.out.println("Cams change ");
+=======
+		
+		System.out.println("But it wasn't your typical battle, His students challenged him to a dance battle"); 
+		
+>>>>>>> edfc9eea0ced4e8b51757e04d22d45f4c34042dd
 	}
 
 }
