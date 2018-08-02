@@ -10,7 +10,7 @@ public class Cash extends Payment {
 		
 	}
 	
-	//Constuctor 
+	//Constructor 
 	public Cash(String paymentType, double amount, double changeDue) {
 		super(paymentType, amount);
 		this.changeDue = changeDue;

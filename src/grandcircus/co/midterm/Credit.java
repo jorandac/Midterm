@@ -4,14 +4,14 @@ public class Credit extends Payment {
 
 	// Class variables
 	private String creditCardNumber;
-	private String experationDate;
+	private String expirationDate;
 	private String cvv;
 
 	// Constructor using fields
 	public Credit(String paymentType, double amount, String creditCardNumber, String experationDate, String cvv) {
 		super(paymentType, amount);
 		this.creditCardNumber = creditCardNumber;
-		this.experationDate = experationDate;
+		this.expirationDate = experationDate;
 		this.cvv = cvv;
 	}
 
@@ -30,11 +30,11 @@ public class Credit extends Payment {
 	}
 
 	public String getExperationDate() {
-		return experationDate;
+		return expirationDate;
 	}
 
 	public void setExperationDate(String experationDate) {
-		this.experationDate = experationDate;
+		this.expirationDate = experationDate;
 	}
 
 	public String getCvv() {
@@ -47,7 +47,7 @@ public class Credit extends Payment {
 
 	@Override
 	public String toString() {
-		return "Credit [creditCardNumber=" + creditCardNumber + ", experationDate=" + experationDate + ", cvv=" + cvv
+		return "Credit [creditCardNumber=" + creditCardNumber + ", experationDate=" + expirationDate + ", cvv=" + cvv
 				+ "]";
 	}
 
