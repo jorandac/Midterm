@@ -9,7 +9,7 @@ public class JavaBeansStoreApp {
 		// Scanner
 		Scanner scnr = new Scanner(System.in);
 
-		// New Country ArrayList
+		// New Product ArrayList
 		List<Product> menu = ProductFileUtil.readFile();
 
 		// Display Menu
