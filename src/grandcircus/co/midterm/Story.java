@@ -16,6 +16,8 @@ public class Story {
 
 		System.out.println("He thought to himself, Is he initiating a challenge? "
 				+ " and prepared his mind, body and soul for the battle to come");
+		
+		System.out.println("But it wasn't your typical battle, His ninja's challenged him to a dance battle"); 
 	}
 
 }
