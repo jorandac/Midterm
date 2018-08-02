@@ -64,10 +64,10 @@ public class StoreMethods {
 		int randomExpDate = ThreadLocalRandom.current().nextInt(1, 4 + 1);
 
 		// Random cvv
-		int randomCvv = ThreadLocalRandom.current().nextInt(1, 3 + 1);
+		int randomCVV = ThreadLocalRandom.current().nextInt(1, 3 + 1);
 
 		System.out.println(
-				"Card Number: " + randomCreditCardNumber + "Exp Date: " + randomExpDate + " Cvv: " + randomCvv);
+				"Card Number: " + randomCreditCardNumber + "Exp Date: " + randomExpDate + " Cvv: " + randomCVV);
 
 	}
 
@@ -81,9 +81,10 @@ public class StoreMethods {
 	}
 
 	// Display receipt
-	public static void displayReceipt() {
-		System.out.println("Thank for shopping at Java Beans!");
-		System.out.println("Your total is: ");
+	public static void displayReceipt(List<Product> products, double total) {
+		System.out.println("Thank you for shopping at Java Beans!");
+		System.out.println("Your total is: " + total);
+
 	}
 
 	// Store payment info to .txt file
