@@ -13,6 +13,7 @@ public class ProductFileUtil {
 
 	// The path to the file to use
 	public static final String FILE_NAME = "Menu.txt";
+	public static final String FILE_NAME2 = "StorePaymentInfo.txt";
 
 	// Modify this method as necessary to convert a line of text from the file to a
 	// new item instance
@@ -67,7 +68,7 @@ public class ProductFileUtil {
 		try (
 				// The `false` here tells the FileOutputStream to overwrite the file, rather
 				// than append to it
-				FileOutputStream fileOutputStream = new FileOutputStream(FILE_NAME, false);
+				FileOutputStream fileOutputStream = new FileOutputStream(FILE_NAME2, false);
 				PrintWriter fileWriter = new PrintWriter(fileOutputStream);) {
 			// write to the file
 			for (Product item : items) {
