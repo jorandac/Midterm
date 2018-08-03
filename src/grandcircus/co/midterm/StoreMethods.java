@@ -1,9 +1,13 @@
 package grandcircus.co.midterm;
 
 import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class StoreMethods {
+
+	// Scanner
+	static Scanner scnr = new Scanner(System.in);
 
 	// display menu
 	public static void displayMenu(List<Product> products) {
@@ -36,7 +40,17 @@ public class StoreMethods {
 	}
 
 	// Display total
-	public static void displayTotal(double total) {
+	public static void displayTotal(double total, List<Product> products) {
+
+		int num = 1;
+
+		for (Product product : products) {
+
+			System.out.println(num + ". " + product);
+
+			num++;
+
+		}
 
 		System.out.println("Your Total with tax is: " + total);
 
@@ -89,10 +103,22 @@ public class StoreMethods {
 
 	// Build sandwhich method
 
-	public static Product buildSandwhich() {
-		Product customerSandwhich = null;
-
-		return customerSandwhich;
+	public static Sandwich buildSandwhich(String name, String description, double price, String category) {
+		// Take customer information for new Sandwhich
+		System.out.println("\\nWhat type of bread would you like?");
+		System.out.print("Enter bread: ");
+		String userBread = Validator.getStringWithValidInformation(scnr, "");
+		System.out.print("Enter Cheese: ");
+		String userCheese = Validator.getStringWithValidInformation(scnr, "");
+		scnr.nextLine();
+		System.out.print("Enter meat: ");
+		String userMeat = Validator.getStringWithValidInformation(scnr, "");
+		scnr.nextLine();
+		System.out.print("Egg? Yes or no ");
+		String userEgg = Validator.YesOrNo(scnr, "");
+		Sandwich userSandwhich = new Sandwich(name, description, price, category, userBread, userCheese, userMeat,
+				userEgg);
+		return userSandwhich;
 
 	}
 

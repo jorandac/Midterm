@@ -5,7 +5,7 @@ public class Sandwich extends Product {
 	private String bread;
 	private String cheese;
 	private String meat;
-	private boolean egg;
+	private String egg;
 
 	// Default Constructor
 	public Sandwich() {
@@ -14,7 +14,7 @@ public class Sandwich extends Product {
 
 	// Constructor using fields
 	public Sandwich(String name, String description, double price, String category, String bread, String cheese,
-			String meat, boolean egg) {
+			String meat, String egg) {
 		super(name, description, price, category);
 		this.bread = bread;
 		this.cheese = cheese;
@@ -47,11 +47,11 @@ public class Sandwich extends Product {
 		this.meat = meat;
 	}
 
-	public boolean isEgg() {
+	public String isEgg() {
 		return egg;
 	}
 
-	public void setEgg(boolean egg) {
+	public void setEgg(String egg) {
 		this.egg = egg;
 	}
 
