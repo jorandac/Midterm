@@ -4,10 +4,10 @@ public class Drink extends Product {
 
 	private String size;
 
-	private int temperature;
+	private String temperature;
 
 	// Constructor using fields
-	public Drink(String name, String description, double price, String category, String size, int temperature) {
+	public Drink(String name, String description, double price, String category, String size, String temperature) {
 		super(name, description, price, category);
 		this.size = size;
 		this.temperature = temperature;
@@ -27,11 +27,11 @@ public class Drink extends Product {
 		this.size = size;
 	}
 
-	public int getTemperature() {
+	public String getTemperature() {
 		return temperature;
 	}
 
-	public void setTemperature(int temperature) {
+	public void setTemperature(String temperature) {
 		this.temperature = temperature;
 	}
 
