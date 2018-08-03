@@ -1,3 +1,7 @@
+//Cameron Barnes
+//JoRanda Chapman
+//Lauren Shindo
+
 package grandcircus.co.midterm;
 
 import java.util.ArrayList;
@@ -11,7 +15,6 @@ public class JavaBeansStoreApp {
 	 *  Drinks:Lauren 
 	 *  JoRanda: Switch Cases: 
 	 *  Descriptions 1-4: Cam, 
-	 *  5-8: Lauren, 
 	 *  9-12 Joranda:
 	 * 
 	 */
@@ -40,16 +43,19 @@ public class JavaBeansStoreApp {
 			int productChoice = Validator.getInt(scnr, "\nPlease choose an item from our menu " + "(enter a number): ",
 					1, menu.size());
 
-			scnr.nextLine(); // clear scanner for taking in string next
+			scnr.nextLine(); // clear scanner for taking in string in next step
 
-			// TODO: if user chooses drink, ask for hot or cold choice
+			//if user chooses a drink, have user choose hot or iced
 			if (menu.get(productChoice).getcategory().equals("drink")) {
-				String drinkTemp = Validator.getString(scnr, "\nWould you like your drink hot or cold?");
+				String drinkTemp = Validator.getString(scnr, "\nWould you like your drink hot or iced?");
+//				String drinkTemp = Validator.getStringMatchingRegex(scnr, "\nWould you like your drink hot or iced?\"", ([HhIi]+));
+				
+				//add product to shopping list
 				shoppingCart.add(menu.get(productChoice));
-				shoppingCart.get(shoppingCart.size() - 1).setName("name " + drinkTemp);
+				
+				
+//				Product temp = shoppingCart.get(shoppingCart.size() - 1).setName(temp.getName()+ drinkTemp);
 
-				for (int i = 0; i < shoppingCart.size(); i++)
-					;
 				{
 					System.out.println(shoppingCart.toString());
 				}
