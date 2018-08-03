@@ -101,10 +101,10 @@ public class StoreMethods {
 
 	}
 
-	// Build sandwhich method
+	// Build sandwich method
 
 	public static Sandwich buildSandwhich(String name, String description, double price, String category) {
-		// Take customer information for new Sandwhich
+		// Take customer information for new Sandwich
 		System.out.println("\\nWhat type of bread would you like?");
 		System.out.print("Enter bread: ");
 		String userBread = Validator.getStringWithValidInformation(scnr, "");
@@ -121,7 +121,5 @@ public class StoreMethods {
 		return userSandwhich;
 
 	}
-
-	// Store payment info to .txt file
 
 }
