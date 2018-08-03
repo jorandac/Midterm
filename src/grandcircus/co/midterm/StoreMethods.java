@@ -68,7 +68,9 @@ public class StoreMethods {
 	}
 	// Credit Card Method (input card information)
 
-	public static void creditCardMethod() {
+	public static String creditCardMethod(String name) {
+
+		String customerInformation = null;
 
 		// Credit card number
 		int randomCreditCardNumber = ThreadLocalRandom.current().nextInt(1, 16 + 1);
@@ -79,17 +81,21 @@ public class StoreMethods {
 		// Random cvv
 		int randomCVV = ThreadLocalRandom.current().nextInt(1, 3 + 1);
 
-		System.out.println(
-				"Card Number: " + randomCreditCardNumber + "Exp Date: " + randomExpDate + " Cvv: " + randomCVV);
+		customerInformation = "Card number: " + randomCreditCardNumber + "Exp date:  " + randomExpDate + "Cvv:  "
+				+ randomCVV;
+
+		return customerInformation;
 
 	}
 
 	// Check Method (input check number)
-	public static void checkMethod() {
+	public static String checkMethod(String name) {
 		// Check number
 		int randomCheckNumber = ThreadLocalRandom.current().nextInt(1, 4 + 1);
 
-		System.out.println(randomCheckNumber + "#");
+		String checkNumber = randomCheckNumber + "#";
+
+		return checkNumber;
 
 	}
 
