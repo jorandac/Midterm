@@ -40,8 +40,7 @@ public class JavaBeansStoreApp {
 	        	   
 	        	
 				for (int i = 0; i < shoppingCart.size(); i ++); {
-	     
-					System.out.println(shoppingCart.indexOf(i));
+					System.out.println(shoppingCart.toString());
 	        	}
 	        	   
 	        	   System.out.println();
