@@ -31,7 +31,6 @@ public class StoreMethods {
 		double salesTax = 0.06;
 
 		for (Product product : shoppingCart) {
-
 			total += product.getPrice();
 		}
 
