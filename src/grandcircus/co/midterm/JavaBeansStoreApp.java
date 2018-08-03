@@ -6,6 +6,16 @@ import java.util.Scanner;
 
 public class JavaBeansStoreApp {
 
+	/*
+	 * TODO: Formatting (Cameron): Format product List, Cart, Write File
+	 *  Drinks:Lauren 
+	 *  JoRanda: Switch Cases: 
+	 *  Descriptions 1-4: Cam, 
+	 *  5-8: Lauren, 
+	 *  9-12 Joranda:
+	 * 
+	 */
+
 	public static void main(String[] args) {
 		// Scanner
 		Scanner scnr = new Scanner(System.in);
@@ -33,20 +43,20 @@ public class JavaBeansStoreApp {
 			scnr.nextLine(); // clear scanner for taking in string next
 
 			// TODO: if user chooses drink, ask for hot or cold choice
-	           if (menu.get(productChoice).getcategory().equals("drink")) {
-	        	   String drinkTemp = Validator.getString(scnr, "\nWould you like your drink hot or cold?");
-	        	   shoppingCart.add(menu.get(productChoice));
-	        	   shoppingCart.get(shoppingCart.size() - 1).setName("name " + drinkTemp); 
-	        	   
-	        	
-				for (int i = 0; i < shoppingCart.size(); i ++); {
+			if (menu.get(productChoice).getcategory().equals("drink")) {
+				String drinkTemp = Validator.getString(scnr, "\nWould you like your drink hot or cold?");
+				shoppingCart.add(menu.get(productChoice));
+				shoppingCart.get(shoppingCart.size() - 1).setName("name " + drinkTemp);
+
+				for (int i = 0; i < shoppingCart.size(); i++)
+					;
+				{
 					System.out.println(shoppingCart.toString());
-	        	}
-	        	   
-	        	   System.out.println();
-	           }
-			
-			
+				}
+
+				System.out.println();
+			}
+
 			// TODO: if user chooses sandwich, ask for options:
 			// TODO: meat, cheese, egg/no egg, bread
 			if (menu.get(productChoice).getName().contains("Breakfast Sandwich")) {
