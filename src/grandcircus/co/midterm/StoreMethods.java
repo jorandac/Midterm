@@ -81,8 +81,8 @@ public class StoreMethods {
 		// Random cvv
 		int randomCVV = ThreadLocalRandom.current().nextInt(1, 3 + 1);
 
-		customerInformation = "Card number: " + randomCreditCardNumber + "Exp date:  " + randomExpDate + "Cvv:  "
-				+ randomCVV;
+		customerInformation = "Name: " + name + "Card number: " + randomCreditCardNumber + "Exp date:  " + randomExpDate
+				+ "Cvv:  " + randomCVV;
 
 		return customerInformation;
 
@@ -93,7 +93,7 @@ public class StoreMethods {
 		// Check number
 		int randomCheckNumber = ThreadLocalRandom.current().nextInt(1, 4 + 1);
 
-		String checkNumber = randomCheckNumber + "#";
+		String checkNumber = "Name: " + name + randomCheckNumber + "#";
 
 		return checkNumber;
 
