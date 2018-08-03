@@ -22,6 +22,7 @@ public class ProductFileUtil {
 		product.setName(products[0]);
 		product.setDescription(products[1]);
 		product.setPrice(Double.parseDouble(products[2]));
+		product.setCategory(products[3]);
 		return product;
 	}
 
