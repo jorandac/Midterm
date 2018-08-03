@@ -69,7 +69,7 @@ public class Validator {
 			}
 
 		} while (!isValid);
-		return number;
+		return number - 1;
 	}
 
 	/**

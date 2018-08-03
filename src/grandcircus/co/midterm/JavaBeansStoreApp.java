@@ -29,6 +29,7 @@ public class JavaBeansStoreApp {
 			// TODO: Ask user to choose item
 			int productChoice = Validator.getInt(scnr, "\nPlease choose an item from our menu " + "(enter a number): ",
 					1, menu.size());
+
 			scnr.nextLine(); // clear scanner for taking in string next
 
 			// TODO: if user chooses drink, ask for hot or cold choice
