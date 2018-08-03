@@ -2,10 +2,10 @@ Espresso	drink	lorem ipsum dolor sit amet	2.25
 Cappucino	drink	lorem ipsum dolor sit amet	2.50
 Cafe Americano	drink	lorem ipsum dolor sit amet	3.25
 Cafe Latte	drink	lorem ipsum dolor sit amet	1.50
-Chai Tea	drink	lorem ipsum dolor sit amet	2.75
-Black Tea	drink	lorem ipsum dolor sit amet	1.25
-Green Tea	drink	lorem ipsum dolor sit amet	1.50
-Blueberry Muffin	food	lorem ipsum dolor sit amet	2.50
+Chai	drink	Black tea infused with spices	2.75
+Black Tea	drink	A lovely alternative to coffee to start your day	1.25
+Green Tea	drink	A refreshing light taste that is also good for you!	1.50
+Blueberry Muffin	food	Just like Mom used to make, with a light brown sugar topping	2.50
 Pumpkin Spice Muffin	food	lorem ipsum dolor sit amet	2.50
 Banana Bread	food	lorem ipsum dolor sit amet	2.50
 Chocolate Chip Cookie	food	lorem ipsum dolor sit amet	1.25
