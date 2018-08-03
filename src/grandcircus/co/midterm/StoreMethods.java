@@ -87,6 +87,15 @@ public class StoreMethods {
 
 	}
 
+	// Build sandwhich method
+
+	public static Product buildSandwhich() {
+		Product customerSandwhich = null;
+
+		return customerSandwhich;
+
+	}
+
 	// Store payment info to .txt file
 
 }
