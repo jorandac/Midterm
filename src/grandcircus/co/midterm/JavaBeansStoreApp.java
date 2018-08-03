@@ -73,6 +73,8 @@ public class JavaBeansStoreApp {
 		}
 
 		// TODO: display receipt
+		// comment here
+
 	}
 
 }
