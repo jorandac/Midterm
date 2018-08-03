@@ -20,9 +20,9 @@ public class ProductFileUtil {
 		String[] products = line.split("\t");
 		Product product = new Product();
 		product.setName(products[0]);
-		product.setDescription(products[1]);
-		product.setPrice(Double.parseDouble(products[2]));
-		product.setCategory(products[3]);
+		product.setDescription(products[2]);
+		product.setPrice(Double.parseDouble(products[3]));
+		product.setCategory(products[1]);
 		return product;
 	}
 
