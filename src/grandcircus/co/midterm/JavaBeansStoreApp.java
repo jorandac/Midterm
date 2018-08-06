@@ -157,4 +157,5 @@ public class JavaBeansStoreApp {
 		StoreMethods.displayReceipt(shoppingCart, shoppingCartTotal);
 	}
 
+	// add comment to push
 }
