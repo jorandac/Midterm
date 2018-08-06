@@ -68,7 +68,7 @@ public class StoreMethods {
 	}
 	// Credit Card Method (input card information)
 
-	public static String creditCardMethod(String name) {
+	public static String creditCardMethod(String name, double total) {
 
 		String customerInformation = null;
 
@@ -82,27 +82,33 @@ public class StoreMethods {
 		int randomCVV = ThreadLocalRandom.current().nextInt(1, 3 + 1);
 
 		customerInformation = "Name: " + name + "Card number: " + randomCreditCardNumber + "Exp date:  " + randomExpDate
-				+ "Cvv:  " + randomCVV;
+				+ "Cvv:  " + randomCVV + "Total: $" + total;
 
 		return customerInformation;
 
 	}
 
 	// Check Method (input check number)
-	public static String checkMethod(String name) {
+	public static String checkMethod(String name, double total) {
 		// Check number
 		int randomCheckNumber = ThreadLocalRandom.current().nextInt(1, 4 + 1);
 
-		String checkNumber = "Name: " + name + randomCheckNumber + "#";
+		String checkNumber = "Name: " + name + randomCheckNumber + "#" + "Total: $" + total;
 
 		return checkNumber;
 
 	}
 
 	// Display receipt
-	public static void displayReceipt(List<Product> products, double total) {
+	public static void displayReceipt(List<CartItem> shoppingCart, double total) {
 		System.out.println("Thank you for shopping at Java Beans!");
-		System.out.println("Your total is: " + total);
+	    int num = 1; 
+	    for (Product product: shoppingCart) {
+	    	System.out.println(num + " " + product);
+	    }
+		
+	    	System.out.println("Your total is: " + total);
+		
 
 	}
 

@@ -128,15 +128,16 @@ public class JavaBeansStoreApp {
 		case 2:
 			// Credit Method: Write to File
 			String userName = Validator.getString(scnr, "Please enter your name ");
-			StoreMethods.creditCardMethod(userName);
-			ProductFileUtil.appendLine(paymentChoice);
+			String customerInformation = StoreMethods.creditCardMethod(userName, shoppingCartTotal);
+			ProductFileUtil.writeFile(customerInformation);
 			System.out.println("Your Payment has been approved!");
 			break;
 
 		case 3:
 			// Check Method: Write to File
-			StoreMethods.checkMethod();
-			ProductFileUtil.appendLine(paymentChoice);
+			String userNameCheck = Validator.getString(scnr, "Please enter your name ");
+			String customerInformationCheck = StoreMethods.checkMethod(userNameCheck, shoppingCartTotal);
+			ProductFileUtil.writeFile(customerInformationCheck);
 			System.out.println("Your Payment has been approved!");
 			break;
 
@@ -144,7 +145,7 @@ public class JavaBeansStoreApp {
 		System.out.println("Thank you for shopping with us. Enjoy your day!");
 
 		// TODO: display receipt
-		StoreMethods.displayReceipt(menu, shoppingCartTotal);
+		StoreMethods.displayReceipt(shoppingCart, shoppingCartTotal);
 	}
 
 }
