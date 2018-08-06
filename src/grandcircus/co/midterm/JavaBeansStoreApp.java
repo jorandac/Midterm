@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import Validator.Validator;
-
 public class JavaBeansStoreApp {
 
 	public static void main(String[] args) {
@@ -38,47 +36,48 @@ public class JavaBeansStoreApp {
 
 			scnr.nextLine(); // clear scanner for taking in string in next step
 
-			//if user chooses a drink, have user choose hot or iced, and drink size
+			// if user chooses a drink, have user choose hot or iced, and drink size
 			if (menu.get(productChoice).getcategory().equals("drink")) {
-				//set temporary drink variable to store user choice
-				Drink myDrink =  (Drink) menu.get(productChoice);
-				String drinkTemp = Validator.getStringWithValidInformation(scnr, "\nWould you like your drink hot or iced? ");
+				// set temporary drink variable to store user choice
+				Drink myDrink = (Drink) menu.get(productChoice);
+				String drinkTemp = Validator.getStringWithValidInformation(scnr,
+						"\nWould you like your drink hot or iced? ");
 				myDrink.setTemperature(drinkTemp);
-				
+
 				String drinkSize = Validator.getString(scnr, "\nWould you like your drink small, medium, or large? ");
 				myDrink.setSize(drinkSize);
-				
+
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
-				
-				//add product to shopping cart
+
+				// add product to shopping cart
 				CartItem myNewItem = new CartItem(myDrink, quantity);
 				shoppingCart.add(myNewItem);
-				
+
 				System.out.println(shoppingCart.toString());
-				//TODO: print only number, product name, and price. Not description.
-				
-				//extra line for readability
+				// TODO: print only number, product name, and price. Not description.
+
+				// extra line for readability
 				System.out.println();
 			}
 
 			if (menu.get(productChoice).getName().contains("Breakfast Sandwich")) {
 
-				Sandwich mySandwich =  (Sandwich) menu.get(productChoice);
+				Sandwich mySandwich = (Sandwich) menu.get(productChoice);
 				String bread = Validator.getString(scnr, "\nWhat type of bread would you like? ");
 				mySandwich.setBread(bread);
-				
+
 				String cheese = Validator.getString(scnr, "\nWhat type of cheese would you like? ");
 				mySandwich.setCheese(cheese);
-				
+
 				String meat = Validator.getString(scnr, "\nWhat type of meat would you like? ");
 				mySandwich.setMeat(meat);
-				
+
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
-				
-				//add product to shopping cart
+
+				// add product to shopping cart
 				CartItem myNewItem = new CartItem(mySandwich, quantity);
 				shoppingCart.add(myNewItem);
-				
+
 			}
 			// TODO: store user choice in ArrayList
 
@@ -90,38 +89,37 @@ public class JavaBeansStoreApp {
 		// TODO: display subtotal
 
 		// TODO: ask for payment type Switch/Case
-					int paymentChoice = Validator.getInt(scnr,
-							"\nHow would you like to pay? " + "(Choose 1 for cash, 2 for credit, or 3 for check): ", 1, 3);
-					System.out.println(); // blank line for readability
+		int paymentChoice = Validator.getInt(scnr,
+				"\nHow would you like to pay? " + "(Choose 1 for cash, 2 for credit, or 3 for check): ", 1, 3);
+		System.out.println(); // blank line for readability
 
-					switch (paymentChoice) {
-					case 1:
-						// cashMethod 
-						//StoreMethods.cashMethod()
-						System.out.println("Enter your Cash Amount");
-						scnr.nextInt(); //or scnr.nextDouble();
-						System.out.println("Your Change Due is ");
-						
-						break;
-					case 2:
-						// creditMethod, write to file
-						//StoreMethods.creditMethod()
-						ProductFileUtil.appendLine(paymentChoice);  //More than one file 
-						System.out.println("Your Payment has been approved!"); 
-						break;
-					case 3:
-						// CheckMethod, write to file
-						//StoreMethods.checkMethod()
-						ProductFileUtil.appendLine(paymentChoice); //More than one file 
-						System.out.println("Your Payment has been approved!"); 
-						break;
+		switch (paymentChoice) {
+		case 1:
+			// cashMethod
+			// StoreMethods.cashMethod()
+			System.out.println("Enter your Cash Amount");
+			scnr.nextInt(); // or scnr.nextDouble();
+			System.out.println("Your Change Due is ");
 
-					}
-					System.out.println("Thank you for shopping with us. Enjoy your day!");
-					
-					// TODO: display receipt
-					StoreMethods.displayReceipt(menu);
-				}
+			break;
+		case 2:
+			// creditMethod, write to file
+			// StoreMethods.creditMethod()
+			ProductFileUtil.appendLine(paymentChoice); // More than one file
+			System.out.println("Your Payment has been approved!");
+			break;
+		case 3:
+			// CheckMethod, write to file
+			// StoreMethods.checkMethod()
+			ProductFileUtil.appendLine(paymentChoice); // More than one file
+			System.out.println("Your Payment has been approved!");
+			break;
 
-			}
-		
+		}
+		System.out.println("Thank you for shopping with us. Enjoy your day!");
+
+		// TODO: display receipt
+		StoreMethods.displayReceipt(menu);
+	}
+
+}
