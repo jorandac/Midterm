@@ -38,7 +38,7 @@ public class Drink extends Product {
 	// To String
 	@Override
 	public String toString() {
-		return super.toString() + size + " " + temperature + "]";
+		return super.toString() + "\t" + size + " " + temperature;
 	}
 
 }
