@@ -138,7 +138,7 @@ public class JavaBeansStoreApp {
 			ProductFileUtil.appendLine(paymentChoice); 
 			System.out.println("Your Payment has been approved!");
 			break;
-//Extra Comment
+
 		}
 		System.out.println("Thank you for shopping with us. Enjoy your day!");
 
