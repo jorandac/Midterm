@@ -10,15 +10,6 @@ import java.util.Scanner;
 
 public class JavaBeansStoreApp {
 
-	/*
-	 * TODO: Formatting (Cameron): Format product List, Cart, Write File
-	 *  Drinks:Lauren 
-	 *  JoRanda: Switch Cases: 
-	 *  Descriptions 1-4: Cam, 
-	 *  9-12 Joranda:
-	 * 
-	 */
-
 	public static void main(String[] args) {
 		// Scanner
 		Scanner scnr = new Scanner(System.in);
