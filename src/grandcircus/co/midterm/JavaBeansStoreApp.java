@@ -42,12 +42,15 @@ public class JavaBeansStoreApp {
 				Drink myDrink = (Drink) menu.get(productChoice);
 				String drinkTemp = Validator.getStringIcedOrHot(scnr,
 						"\nWould you like your drink hot or iced? ");
+				scnr.reset();
 
 				//set temporary drink variable to store user choice
 				myDrink.setTemperature(drinkTemp);
-
+				
+				
 				String drinkSize = Validator.getStringSize(scnr, "\nWould you like your drink small, medium, or large? ");
 				myDrink.setSize(drinkSize);
+				scnr.reset();
 
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
 
@@ -55,9 +58,12 @@ public class JavaBeansStoreApp {
 				//add product to shopping cart
 				CartItem myNewItem = new CartItem(myDrink, quantity);
 				shoppingCart.add(myNewItem);
-
-				System.out.println(shoppingCart.toString());
-				// TODO: print only number, product name, and price. Not description.
+				
+				int num = 1;
+				for (CartItem cartItem : shoppingCart) {
+					System.out.println(num + ". " + cartItem);
+					num++;
+				}
 
 				// extra line for readability
 				System.out.println();

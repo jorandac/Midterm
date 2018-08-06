@@ -94,7 +94,6 @@ public class Validator {
 		do {
 			if (input.matches("^(iced|hot)$")) {
 				isValid = true;
-				// System.out.print("valid String");
 				return input;
 
 			} else {
@@ -119,7 +118,6 @@ public class Validator {
 		do {
 			if (input.matches("^(samll|medium|large)$")) {
 				isValid = true;
-				// System.out.print("valid String");
 				return input;
 
 			} else {
