@@ -71,6 +71,26 @@ public class Validator {
 		} while (!isValid);
 		return number - 1;
 	}
+	
+	public static int getIntPaymentType(Scanner scnr, String prompt, int min, int max) {
+		boolean isValid = false;
+		int number;
+		do {
+			number = getInt(scnr, prompt);
+
+			if (number < min) {
+				isValid = false;
+				System.out.println("The number must be at least " + min);
+			} else if (number > max) {
+				isValid = false;
+				System.out.println("The number must not be larger than " + max);
+			} else {
+				isValid = true;
+			}
+
+		} while (!isValid);
+		return number;
+	}
 
 	/**
 	 * Get any string basic

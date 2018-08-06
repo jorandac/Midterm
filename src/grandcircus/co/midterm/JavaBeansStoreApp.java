@@ -112,7 +112,8 @@ public class JavaBeansStoreApp {
 
 		// TODO: Ask for Payment Type: Switch/Case
 
-		int paymentChoice = Validator.
+		int paymentChoice = Validator.getIntPaymentType(scnr, "How would you like to pay? Enter 1 for cash, "
+				+ "2 for credit, or 3 for check. ", 1, 3);
 		System.out.println(); // Blank Line for Readability
 
 		switch (paymentChoice) {
