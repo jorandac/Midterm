@@ -25,7 +25,7 @@ public class StoreMethods {
 	}
 
 	// Get Total
-	public static double getTotal(List<Product> shoppingCart) {
+	public static double getTotal(List<CartItem> shoppingCart) {
 
 		double total = 0;
 		double salesTax = 0.06;

@@ -1,6 +1,6 @@
 package grandcircus.co.midterm;
 
-public class CartItem {
+public class CartItem extends Product{
 
 	private Product product;
 
