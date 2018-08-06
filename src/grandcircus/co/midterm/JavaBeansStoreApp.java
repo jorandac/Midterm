@@ -112,8 +112,7 @@ public class JavaBeansStoreApp {
 
 		// TODO: Ask for Payment Type: Switch/Case
 
-		int paymentChoice = Validator.getInt(scnr,
-				"\nHow would you like to pay? " + "(Choose 1 for cash, 2 for credit, or 3 for check): ", 1, 3);
+		int paymentChoice = Validator.
 		System.out.println(); // Blank Line for Readability
 
 		switch (paymentChoice) {
@@ -124,7 +123,6 @@ public class JavaBeansStoreApp {
 			double userAmount = scnr.nextDouble();
 			double change = StoreMethods.cashMethod(shoppingCartTotal, userAmount);
 			System.out.println("Your Change Due is " + change);
-
 			break;
 		case 2:
 			// Credit Method: Write to File
