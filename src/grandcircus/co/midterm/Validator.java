@@ -86,13 +86,12 @@ public class Validator {
 	 * Get String and also validate it's information
 	 */
 
-	public static String getStringWithValidInformation(Scanner scnr, String prompt) {
+	public static String getStringIcedOrHot(Scanner scnr, String prompt) {
 		System.out.println(prompt);
 		String input = scnr.nextLine();
 		boolean isValid = false;
 
 		do {
-//			if (input.matches("[a-zA-Z\\s]+")) {
 			if (input.matches("^(iced|hot)$")) {
 				isValid = true;
 				// System.out.print("valid String");

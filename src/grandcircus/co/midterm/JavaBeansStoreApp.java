@@ -38,18 +38,31 @@ public class JavaBeansStoreApp {
 
 			// if user chooses a drink, have user choose hot or iced, and drink size
 			if (menu.get(productChoice).getcategory().equals("drink")) {
+<<<<<<< HEAD
 				// set temporary drink variable to store user choice
 				Drink myDrink = (Drink) menu.get(productChoice);
 				String drinkTemp = Validator.getStringWithValidInformation(scnr,
 						"\nWould you like your drink hot or iced? ");
+=======
+				//set temporary drink variable to store user choice
+				Drink myDrink =  (Drink) menu.get(productChoice);
+				String drinkTemp = Validator.getStringIcedOrHot(scnr, "\nWould you like your drink hot or iced? ");
+>>>>>>> aa013b10034eb11f201db6f39cf926870fe61e14
 				myDrink.setTemperature(drinkTemp);
 
 				String drinkSize = Validator.getString(scnr, "\nWould you like your drink small, medium, or large? ");
 				myDrink.setSize(drinkSize);
+<<<<<<< HEAD
 
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
 
 				// add product to shopping cart
+=======
+				
+				int quantity = Validator.getInt(scnr, "\nHow many would you like? ");
+				
+				//add product to shopping cart
+>>>>>>> aa013b10034eb11f201db6f39cf926870fe61e14
 				CartItem myNewItem = new CartItem(myDrink, quantity);
 				shoppingCart.add(myNewItem);
 
@@ -89,6 +102,7 @@ public class JavaBeansStoreApp {
 		// TODO: display subtotal
 
 		// TODO: ask for payment type Switch/Case
+<<<<<<< HEAD
 		int paymentChoice = Validator.getInt(scnr,
 				"\nHow would you like to pay? " + "(Choose 1 for cash, 2 for credit, or 3 for check): ", 1, 3);
 		System.out.println(); // blank line for readability
@@ -123,3 +137,40 @@ public class JavaBeansStoreApp {
 	}
 
 }
+=======
+//					int paymentChoice = Validator.getInt(scnr,
+//							"\nHow would you like to pay? " + "(Choose 1 for cash, 2 for credit, or 3 for check): ", 1, 3);
+//					System.out.println(); // blank line for readability
+//
+//					switch (paymentChoice) {
+//					case 1:
+//						// cashMethod 
+//						//StoreMethods.cashMethod()
+//						System.out.println("Enter your Cash Amount");
+//						scnr.nextInt(); //or scnr.nextDouble();
+//						System.out.println("Your Change Due is ");
+//						
+//						break;
+//					case 2:
+//						// creditMethod, write to file
+//						//StoreMethods.creditMethod()
+//						ProductFileUtil.appendLine(paymentChoice);  //More than one file 
+//						System.out.println("Your Payment has been approved!"); 
+//						break;
+//					case 3:
+//						// CheckMethod, write to file
+//						//StoreMethods.checkMethod()
+//						ProductFileUtil.appendLine(paymentChoice); //More than one file 
+//						System.out.println("Your Payment has been approved!"); 
+//						break;
+//
+//					}
+//					System.out.println("Thank you for shopping with us. Enjoy your day!");
+//					
+//					// TODO: display receipt
+//					StoreMethods.displayReceipt(menu);
+				}
+
+			}
+		
+>>>>>>> aa013b10034eb11f201db6f39cf926870fe61e14
