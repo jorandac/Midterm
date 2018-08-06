@@ -88,7 +88,7 @@ public class Validator {
 
 	public static String getStringIcedOrHot(Scanner scnr, String prompt) {
 		System.out.println(prompt);
-		String input = scnr.nextLine();
+		String input = scnr.nextLine().toLowerCase();
 		boolean isValid = false;
 
 		do {
@@ -100,6 +100,57 @@ public class Validator {
 			} else {
 				isValid = false;
 				System.out.println("please enter \"iced\" or \"hot\"");
+				return getString(scnr, prompt);
+
+			}
+		} while (isValid == false);
+
+	}
+
+	/*
+	 * Validator for small medium or large
+	 */
+
+	public static String getStringSize(Scanner scnr, String prompt) {
+		System.out.println(prompt);
+		String input = scnr.nextLine().toLowerCase();
+		boolean isValid = false;
+
+		do {
+			if (input.matches("^(samll|medium|large)$")) {
+				isValid = true;
+				// System.out.print("valid String");
+				return input;
+
+			} else {
+				isValid = false;
+				System.out.println("please enter \"small\" or \"medium\" or \"large\"");
+				return getString(scnr, prompt);
+
+			}
+		} while (isValid == false);
+
+	}
+
+	/*
+	 * String Validator with valid information
+	 * 
+	 */
+
+	public static String getStringWithValidInformation(Scanner scnr, String prompt) {
+		System.out.println(prompt);
+		String userInput = scnr.nextLine();
+		boolean isValid = false;
+
+		do {
+			if (userInput.matches("[a-zA-Z\\s]+")) {
+				isValid = true;
+				// System.out.print("valid String");
+				return userInput;
+
+			} else {
+				isValid = false;
+				System.out.println(" That data does not exist. Please try again.please enter valid answer");
 				return getString(scnr, prompt);
 
 			}
