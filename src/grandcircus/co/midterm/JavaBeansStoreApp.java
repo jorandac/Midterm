@@ -38,6 +38,7 @@ public class JavaBeansStoreApp {
 
 			// if user chooses a drink, have user choose hot or iced, and drink size
 			if (menu.get(productChoice).getcategory().equals("drink")) {
+				
 				// set temporary drink variable to store user choice
 				Drink myDrink = (Drink) menu.get(productChoice);
 				String drinkTemp = Validator.getStringIcedOrHot(scnr,
