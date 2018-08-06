@@ -116,13 +116,13 @@ public class Validator {
 		boolean isValid = false;
 
 		do {
-			if (input.matches("^(samll|medium|large)$")) {
+			if (input.matches("^(small|medium|large)$")) {
 				isValid = true;
 				return input;
 
 			} else {
 				isValid = false;
-				System.out.println("please enter \"small\" or \"medium\" or \"large\"");
+				//System.out.println("please enter \"small\" or \"medium\" or \"large\"");
 				return getString(scnr, prompt);
 
 			}
