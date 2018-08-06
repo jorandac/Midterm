@@ -115,7 +115,7 @@ public class JavaBeansStoreApp {
 		// TODO: display subtotal
 		DecimalFormat df = new DecimalFormat("#.##");
 		double shoppingCartTotal = StoreMethods.getTotal(shoppingCart);
-		System.out.println(df.format(shoppingCartTotal));
+//		System.out.println(df.format(shoppingCartTotal));
 
 		// TODO: Ask for Payment Type: Switch/Case
 
@@ -134,18 +134,20 @@ public class JavaBeansStoreApp {
 			break;
 		case 2:
 			// Credit Method: Write to File
+			scnr.nextLine();
 			String userName = Validator.getString(scnr, "Please enter your name ");
 			String customerInformation = StoreMethods.creditCardMethod(userName, shoppingCartTotal);
 			ProductFileUtil.writeFile(customerInformation);
-			System.out.println("Your Payment has been approved!");
+			System.out.println(userName + ": Your Payment has been approved!");
 			break;
 
 		case 3:
+			scnr.nextLine();
 			// Check Method: Write to File
 			String userNameCheck = Validator.getString(scnr, "Please enter your name ");
 			String customerInformationCheck = StoreMethods.checkMethod(userNameCheck, shoppingCartTotal);
 			ProductFileUtil.writeFile(customerInformationCheck);
-			System.out.println("Your Payment has been approved!");
+			System.out.println(userNameCheck + " Your Payment has been approved!");
 			break;
 
 		}

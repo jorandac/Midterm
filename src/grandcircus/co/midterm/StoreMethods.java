@@ -76,18 +76,33 @@ public class StoreMethods {
 	public static String creditCardMethod(String name, double total) {
 
 		String customerInformation = null;
+		String cardNumber = "";
+		String exp = "";
+		String cvv = "";
+		DecimalFormat df = new DecimalFormat("#.##");
 
-		// Credit card number
-		int randomCreditCardNumber = ThreadLocalRandom.current().nextInt(1, 16 + 1);
+		// Credit card numbe
+		for (int i = 0; i < 16; i++) {
+			int randomCreditCardNumber = ThreadLocalRandom.current().nextInt(1, 9);
+			cardNumber = cardNumber + "" + randomCreditCardNumber;
+
+		}
 
 		// Random Exp Date
-		int randomExpDate = ThreadLocalRandom.current().nextInt(1, 4 + 1);
+		for (int i = 0; i < 4; i++) {
+			int randomExp = ThreadLocalRandom.current().nextInt(1, 9);
+			exp = exp + "" + randomExp;
 
+		}
 		// Random cvv
-		int randomCVV = ThreadLocalRandom.current().nextInt(1, 3 + 1);
+		for (int i = 0; i < 3; i++) {
+			int randomCvv = ThreadLocalRandom.current().nextInt(1, 9);
+			cvv = cvv + "" + randomCvv;
 
-		customerInformation = "Name: " + name + "Card number: " + randomCreditCardNumber + "Exp date:  " + randomExpDate
-				+ "Cvv:  " + randomCVV + "Total: $" + total;
+		}
+
+		customerInformation = "Name: " + name + " Card number: " + cardNumber + "Exp date: " + exp + "Cvv: " + cvv
+				+ "Total: $" + df.format(total);
 
 		return customerInformation;
 
@@ -96,11 +111,19 @@ public class StoreMethods {
 	// Check Method (input check number)
 	public static String checkMethod(String name, double total) {
 		// Check number
-		int randomCheckNumber = ThreadLocalRandom.current().nextInt(1, 4 + 1);
+		String customerInformation = null;
+		DecimalFormat df = new DecimalFormat("#.##");
+		String checkNumber = "";
 
-		String checkNumber = "Name: " + name + randomCheckNumber + "#" + "Total: $" + total;
+		// Generate check number
+		for (int i = 0; i < 4; i++) {
+			int randomCheckNumber = ThreadLocalRandom.current().nextInt(1, 9);
+			checkNumber = checkNumber + "" + randomCheckNumber;
 
-		return checkNumber;
+		}
+		customerInformation = "Name: " + name + " Check number " + checkNumber + "# " + "Total: $" + df.format(total);
+
+		return customerInformation;
 
 	}
 
@@ -108,6 +131,7 @@ public class StoreMethods {
 	public static void displayReceipt(List<CartItem> shoppingCart, double total) {
 		DecimalFormat df = new DecimalFormat("#.##");
 		System.out.println("Thank you for shopping at Java Beans!");
+
 		int num = 1;
 		for (Product product : shoppingCart) {
 			System.out.println(num + " " + product);
