@@ -18,7 +18,7 @@ public class StoreMethods {
 
 			System.out.println(num + ". " + product);
 
-			num++;
+			num++;     
 
 		}
 
@@ -63,7 +63,7 @@ public class StoreMethods {
 
 		double change = total - amount;
 
-		return change;
+		return change;     
 
 	}
 	// Credit Card Method (input card information)
@@ -104,11 +104,10 @@ public class StoreMethods {
 		System.out.println("Thank you for shopping at Java Beans!");
 		System.out.println("Your total is: " + total);
 
-	}
+	}   
 
 	// Build sandwich method
-
-	public static Sandwich buildSandwhich(String name, String description, double price, String category) {
+	public static Sandwich buildSandwich(String name, String description, double price, String category) {
 		// Take customer information for new Sandwich
 		System.out.println("\\nWhat type of bread would you like?");
 		System.out.print("Enter bread: ");
