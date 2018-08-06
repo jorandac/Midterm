@@ -107,24 +107,18 @@ public class JavaBeansStoreApp {
 
 		} while (userContinues.matches("yes"));
 
-<<<<<<< HEAD
 		// TODO: display subtotal
 		double shoppingCartTotal = StoreMethods.getTotal(shoppingCart);
 
-		// TODO: ask for payment type Switch/Case
-=======
-		// TODO: Display Subtotal 
-		double shoppingCartTotal=StoreMethods.getTotal(shoppingCart);
-         
 		// TODO: Ask for Payment Type: Switch/Case
->>>>>>> c64b9499e8274744df5853ad131b3f24dc4f6eb4
+
 		int paymentChoice = Validator.getInt(scnr,
 				"\nHow would you like to pay? " + "(Choose 1 for cash, 2 for credit, or 3 for check): ", 1, 3);
-		System.out.println(); // Blank Line for Readability 
+		System.out.println(); // Blank Line for Readability
 
 		switch (paymentChoice) {
 		case 1:
-			// Cash Method 
+			// Cash Method
 			System.out.println("Enter your Cash Amount");
 			double userAmount = scnr.nextDouble();
 			double change = StoreMethods.cashMethod(shoppingCartTotal, userAmount);
@@ -132,17 +126,17 @@ public class JavaBeansStoreApp {
 
 			break;
 		case 2:
-			// Credit Method: Write to File 
+			// Credit Method: Write to File
 			String userName = Validator.getString(scnr, "Please enter your name ");
 			StoreMethods.creditCardMethod(userName);
-			ProductFileUtil.appendLine(paymentChoice); 
+			ProductFileUtil.appendLine(paymentChoice);
 			System.out.println("Your Payment has been approved!");
 			break;
-		
+
 		case 3:
-			// Check Method: Write to File 
+			// Check Method: Write to File
 			StoreMethods.checkMethod();
-			ProductFileUtil.appendLine(paymentChoice); 
+			ProductFileUtil.appendLine(paymentChoice);
 			System.out.println("Your Payment has been approved!");
 			break;
 //Extra Comment
@@ -150,47 +144,7 @@ public class JavaBeansStoreApp {
 		System.out.println("Thank you for shopping with us. Enjoy your day!");
 
 		// TODO: display receipt
-<<<<<<< HEAD
 		StoreMethods.displayReceipt(menu, shoppingCartTotal);
 	}
-
-	}
-
-	int paymentChoice = Validator.getInt(scnr,
-			"\nHow would you like to pay? " + "(Choose 1 for cash, 2 for credit, or 3 for check): ", 1,
-			3);System.out.println(); // blank line for readability
-
-	switch(paymentChoice)
-	{
-					case 1:
-						// cashMethod 
-						//StoreMethods.cashMethod()
-						System.out.println("Enter your Cash Amount");
-						scnr.nextInt(); //or scnr.nextDouble();
-						System.out.println("Your Change Due is ");
-						
-						break;
-					case 2:
-						// creditMethod, write to file
-						//StoreMethods.creditMethod()
-						ProductFileUtil.appendLine(paymentChoice);  //More than one file 
-						System.out.println("Your Payment has been approved!"); 
-						break;
-					case 3:
-						// CheckMethod, write to file
-						//StoreMethods.checkMethod()
-						ProductFileUtil.appendLine(paymentChoice); //More than one file 
-						System.out.println("Your Payment has been approved!"); 
-						break;
-
-					}System.out.println("Thank you for shopping with us. Enjoy your day!");
-
-	// TODO: display receipt
-	StoreMethods.displayReceipt(menu);
-}
-=======
-		StoreMethods.displayReceipt(menu);
-	}
->>>>>>> c64b9499e8274744df5853ad131b3f24dc4f6eb4
 
 }
