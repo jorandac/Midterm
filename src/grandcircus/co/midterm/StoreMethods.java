@@ -30,7 +30,10 @@ public class StoreMethods {
 		double total = 0;
 		double salesTax = 0.06;
 
-		for (Product product : shoppingCart) {
+		for (CartItem product : shoppingCart) {
+			double newPrice = product.getPrice();
+			
+			System.out.println(newPrice);
 			total += product.getPrice();
 		}
 

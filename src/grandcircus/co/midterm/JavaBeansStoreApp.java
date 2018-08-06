@@ -109,6 +109,7 @@ public class JavaBeansStoreApp {
 
 		// TODO: display subtotal
 		double shoppingCartTotal = StoreMethods.getTotal(shoppingCart);
+		System.out.println(shoppingCartTotal);
 
 		// TODO: Ask for Payment Type: Switch/Case
 

@@ -6,14 +6,16 @@ public class Product {
 	private String description;
 	private double price;
 	private String category;
+	private int quantity;
 
 	// constructor using fields
-	public Product(String name, String description, double price, String category) {
+	public Product(String name, String description, double price, String category, int quantity) {
 		super();
 		this.name = name;
 		this.description = description;
 		this.price = price;
 		this.category = category;
+		this.quantity = quantity;
 	}
 
 	// empty constructor
