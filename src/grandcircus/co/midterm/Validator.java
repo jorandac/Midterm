@@ -137,7 +137,7 @@ public class Validator {
 
 	public static String getStringWithValidInformation(Scanner scnr, String prompt) {
 		System.out.println(prompt);
-		String userInput = scnr.nextLine();
+		String userInput = scnr.nextLine().toLowerCase();
 		boolean isValid = false;
 
 		do {
