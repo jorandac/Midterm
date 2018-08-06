@@ -108,8 +108,8 @@ public class JavaBeansStoreApp {
 		} while (userContinues.matches("yes"));
 
 		// TODO: display subtotal
-		double shoppingCartTotal=StoreMethods.getTotal(shoppingCart);
-         
+		double shoppingCartTotal = StoreMethods.getTotal(shoppingCart);
+
 		// TODO: ask for payment type Switch/Case
 		int paymentChoice = Validator.getInt(scnr,
 				"\nHow would you like to pay? " + "(Choose 1 for cash, 2 for credit, or 3 for check): ", 1, 3);
@@ -121,7 +121,7 @@ public class JavaBeansStoreApp {
 			System.out.println("Enter your Cash Amount");
 			double userAmount = scnr.nextDouble();
 			double change = StoreMethods.cashMethod(shoppingCartTotal, userAmount);
-			System.out.println("Your Change Due is " + change);	
+			System.out.println("Your Change Due is " + change);
 
 			break;
 		case 2:
@@ -145,12 +145,14 @@ public class JavaBeansStoreApp {
 		StoreMethods.displayReceipt(menu, shoppingCartTotal);
 	}
 
-}
-					int paymentChoice = Validator.getInt(scnr,
-							"\nHow would you like to pay? " + "(Choose 1 for cash, 2 for credit, or 3 for check): ", 1, 3);
-					System.out.println(); // blank line for readability
+	}
 
-					switch (paymentChoice) {
+	int paymentChoice = Validator.getInt(scnr,
+			"\nHow would you like to pay? " + "(Choose 1 for cash, 2 for credit, or 3 for check): ", 1,
+			3);System.out.println(); // blank line for readability
+
+	switch(paymentChoice)
+	{
 					case 1:
 						// cashMethod 
 						//StoreMethods.cashMethod()
@@ -172,11 +174,10 @@ public class JavaBeansStoreApp {
 						System.out.println("Your Payment has been approved!"); 
 						break;
 
-					}
-					System.out.println("Thank you for shopping with us. Enjoy your day!");
-					
-					// TODO: display receipt
-					StoreMethods.displayReceipt(menu);
-	}
+					}System.out.println("Thank you for shopping with us. Enjoy your day!");
+
+	// TODO: display receipt
+	StoreMethods.displayReceipt(menu);
+}
 
 }
