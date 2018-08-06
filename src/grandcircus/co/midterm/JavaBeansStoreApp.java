@@ -26,7 +26,7 @@ public class JavaBeansStoreApp {
 		// Product ArrayList
 		List<Product> menu = ProductFileUtil.readFile();
 		// Shopping cart
-		List<Product> shoppingCart = new ArrayList<>();
+		List<CartItem> shoppingCart = new ArrayList<>();
 
 		String userContinues = "n"; // keeps track of whether user wants to continue in the loop
 
@@ -39,35 +39,53 @@ public class JavaBeansStoreApp {
 		// loop starts here
 		do {
 
-			// TODO: Ask user to choose item
+			// Ask user to choose item
 			int productChoice = Validator.getInt(scnr, "\nPlease choose an item from our menu " + "(enter a number): ",
 					1, menu.size());
 
 			scnr.nextLine(); // clear scanner for taking in string in next step
 
-			//if user chooses a drink, have user choose hot or iced
+			//if user chooses a drink, have user choose hot or iced, and drink size
 			if (menu.get(productChoice).getcategory().equals("drink")) {
-				String drinkTemp = Validator.getString(scnr, "\nWould you like your drink hot or iced?");
-//				String drinkTemp = Validator.getStringMatchingRegex(scnr, "\nWould you like your drink hot or iced?\"", ([HhIi]+));
+				//set temporary drink variable to store user choice
+				Drink myDrink =  (Drink) menu.get(productChoice);
+				String drinkTemp = Validator.getStringWithValidInformation(scnr, "\nWould you like your drink hot or iced? ");
+				myDrink.setTemperature(drinkTemp);
 				
-				//add product to shopping list
-				shoppingCart.add(menu.get(productChoice));
+				String drinkSize = Validator.getString(scnr, "\nWould you like your drink small, medium, or large? ");
+				myDrink.setSize(drinkSize);
 				
+				int quantity = Validator.getInt(scnr, "How many would you like? ");
 				
-//				Product temp = shoppingCart.get(shoppingCart.size() - 1).setName(temp.getName()+ drinkTemp);
-
-				{
-					System.out.println(shoppingCart.toString());
-				}
-
+				//add product to shopping cart
+				CartItem myNewItem = new CartItem(myDrink, quantity);
+				shoppingCart.add(myNewItem);
+				
+				System.out.println(shoppingCart.toString());
+				//TODO: print only number, product name, and price. Not description.
+				
+				//extra line for readability
 				System.out.println();
 			}
 
-			// TODO: if user chooses sandwich, ask for options:
-			// TODO: meat, cheese, egg/no egg, bread
 			if (menu.get(productChoice).getName().contains("Breakfast Sandwich")) {
 
-				String sandwichBread = Validator.getString(scnr, "\nWhat type of bread would you like? ");
+				Sandwich mySandwich =  (Sandwich) menu.get(productChoice);
+				String bread = Validator.getString(scnr, "\nWhat type of bread would you like? ");
+				mySandwich.setBread(bread);
+				
+				String cheese = Validator.getString(scnr, "\nWhat type of cheese would you like? ");
+				mySandwich.setCheese(cheese);
+				
+				String meat = Validator.getString(scnr, "\nWhat type of meat would you like? ");
+				mySandwich.setMeat(meat);
+				
+				int quantity = Validator.getInt(scnr, "How many would you like? ");
+				
+				//add product to shopping cart
+				CartItem myNewItem = new CartItem(mySandwich, quantity);
+				shoppingCart.add(myNewItem);
+				
 			}
 			// TODO: store user choice in ArrayList
 

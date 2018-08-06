@@ -92,14 +92,15 @@ public class Validator {
 		boolean isValid = false;
 
 		do {
-			if (input.matches("[a-zA-Z\\s]+")) {
+//			if (input.matches("[a-zA-Z\\s]+")) {
+			if (input.matches("^(iced|hot)$")) {
 				isValid = true;
 				// System.out.print("valid String");
 				return input;
 
 			} else {
 				isValid = false;
-				System.out.println("please enter valid data");
+				System.out.println("please enter \"iced\" or \"hot\"");
 				return getString(scnr, prompt);
 
 			}

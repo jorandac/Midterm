@@ -19,12 +19,30 @@ public class ProductFileUtil {
 	// new item instance
 	private static Product convertLineToItem(String line) {
 		String[] products = line.split("\t");
+		if (products[1].equals("drink")) {
+			Drink drink = new Drink(products[0], products[2], Double.parseDouble(products[3]), products[1], "large", "hot");
+			return drink;
+		}
+		else if (products[0].contains("sandwich")) {
+			Sandwich sandwich = new Sandwich(products[0], products[2], Double.parseDouble(products[3]), products[1], "bagel", "swiss", "ham", "egg");
+			return sandwich;
+		}
+			
+		else {
 		Product product = new Product();
 		product.setName(products[0]);
 		product.setDescription(products[2]);
 		product.setPrice(Double.parseDouble(products[3]));
 		product.setCategory(products[1]);
 		return product;
+		}
+		
+//		Product product = new Product();
+//		product.setName(products[0]);
+//		product.setDescription(products[2]);
+//		product.setPrice(Double.parseDouble(products[3]));
+//		product.setCategory(products[1]);
+//		return product;
 	}
 
 	// Modify this method as necessary to convert an item instance to a line of text

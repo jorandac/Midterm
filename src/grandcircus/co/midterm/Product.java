@@ -59,5 +59,5 @@ public class Product {
 
 		return name + ": $" + price + " \n" + description + "\n";
 	}
-
+	
 }
