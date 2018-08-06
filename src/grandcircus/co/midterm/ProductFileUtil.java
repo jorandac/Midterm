@@ -20,11 +20,11 @@ public class ProductFileUtil {
 	private static Product convertLineToItem(String line) {
 		String[] products = line.split("\t");
 		if (products[1].equals("drink")) {
-			Drink drink = new Drink(products[0], products[2], Double.parseDouble(products[3]), products[1], "large", "hot");
+			Drink drink = new Drink(products[0], products[2], Double.parseDouble(products[3]), products[1], "", "");
 			return drink;
 		}
 		else if (products[0].contains("sandwich")) {
-			Sandwich sandwich = new Sandwich(products[0], products[2], Double.parseDouble(products[3]), products[1], "bagel", "swiss", "ham", "egg");
+			Sandwich sandwich = new Sandwich(products[0], products[2], Double.parseDouble(products[3]), products[1], "", "", "", "");
 			return sandwich;
 		}
 			
