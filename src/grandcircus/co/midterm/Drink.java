@@ -7,8 +7,8 @@ public class Drink extends Product {
 	private String temperature;
 
 	// Constructor using fields
-	public Drink(String name, String description, double price, String category, String size, String temperature, int quantity) {
-		super(name, description, price, category, quantity);
+	public Drink(String name, String description, double price, String category, String size, String temperature) {
+		super(name, description, price, category);
 		this.size = size;
 		this.temperature = temperature;
 	}

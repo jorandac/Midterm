@@ -13,9 +13,9 @@ public class Sandwich extends Product {
 	}
 
 	// Constructor using fields
-	public Sandwich(String name, String description, double price, String category, int quantity, String bread, String cheese,
+	public Sandwich(String name, String description, double price, String category, String bread, String cheese,
 			String meat, String egg) {
-		super(name, description, price, category, quantity);
+		super(name, description, price, category);
 		this.bread = bread;
 		this.cheese = cheese;
 		this.meat = meat;
