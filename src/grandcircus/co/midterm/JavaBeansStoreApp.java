@@ -19,7 +19,7 @@ public class JavaBeansStoreApp {
 		// Shopping cart
 		List<CartItem> shoppingCart = new ArrayList<>();
 
-		String userContinues = "n"; // keeps track of whether user wants to continue in the loop
+		String userContinues = "yes"; // keeps track of whether user wants to continue in the loop
 
 		// Welcome message to user
 		System.out.println("Welcome to Java Beans!\n");
@@ -67,7 +67,7 @@ public class JavaBeansStoreApp {
 				System.out.println();
 			}
 
-			if (menu.get(productChoice).getName().contains("Breakfast Sandwich")) {
+			else if (menu.get(productChoice).getName().contains("Breakfast Sandwich")) {
 
 				Sandwich mySandwich = StoreMethods.buildSandwich(menu.get(productChoice).getName(),
 						menu.get(productChoice).getDescription(), menu.get(productChoice).getPrice(),
@@ -88,13 +88,24 @@ public class JavaBeansStoreApp {
 				// extra line for readability
 				System.out.println();
 
+			} else {
+				int quantity = Validator.getInt(scnr, "How many would you like? ");
+				CartItem myNewItem = new CartItem(menu.get(productChoice), quantity);
+				shoppingCart.add(myNewItem);
+
+				int num = 1;
+				for (CartItem cartItem : shoppingCart) {
+					System.out.println(num + ". " + cartItem);
+					num++;
+				}
+
 			}
 			// TODO: store user choice in ArrayList
-
+			scnr.nextLine(); // clear scanner
 			// Ask if user wants to add more items , loop ends here
-			userContinues = Validator.getString(scnr, "\nWould you like to add anything else to your order? (y/n) ");
+			userContinues = Validator.YesOrNo(scnr, "\nWould you like to add anything else to your order? (yes/no) ");
 
-		} while (userContinues.matches("[yY].*"));
+		} while (userContinues.matches("yes"));
 
 		// TODO: display subtotal
 

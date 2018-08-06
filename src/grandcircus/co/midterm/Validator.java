@@ -122,7 +122,7 @@ public class Validator {
 
 			} else {
 				isValid = false;
-				//System.out.println("please enter \"small\" or \"medium\" or \"large\"");
+				// System.out.println("please enter \"small\" or \"medium\" or \"large\"");
 				return getString(scnr, prompt);
 
 			}

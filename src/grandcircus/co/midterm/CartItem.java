@@ -1,7 +1,7 @@
 package grandcircus.co.midterm;
 
 public class CartItem {
-	
+
 	private Product product;
 
 	private int quantity;
@@ -10,9 +10,9 @@ public class CartItem {
 		this.product = product;
 		this.quantity = quantity;
 	}
-	
-	public CartItem () {
-		
+
+	public CartItem() {
+
 	}
 
 	public Product getProduct() {
@@ -33,9 +33,7 @@ public class CartItem {
 
 	@Override
 	public String toString() {
-		return product + ", " + "Quantity: " + quantity;
+		return product + "\t " + "Quantity: " + quantity;
 	}
-	
-	
-	
+
 }
