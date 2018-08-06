@@ -18,7 +18,7 @@ public class StoreMethods {
 
 			System.out.println(num + ". " + product);
 
-			num++;     
+			num++;
 
 		}
 
@@ -63,7 +63,7 @@ public class StoreMethods {
 
 		double change = total - amount;
 
-		return change;     
+		return change;
 
 	}
 	// Credit Card Method (input card information)
@@ -104,20 +104,19 @@ public class StoreMethods {
 		System.out.println("Thank you for shopping at Java Beans!");
 		System.out.println("Your total is: " + total);
 
-	}   
+	}
 
 	// Build sandwich method
 	public static Sandwich buildSandwich(String name, String description, double price, String category) {
 		// Take customer information for new Sandwich
-		System.out.println("\\nWhat type of bread would you like?");
+		System.out.println("\nWhat type of bread would you like?");
 		System.out.print("Enter bread: ");
 		String userBread = Validator.getStringWithValidInformation(scnr, "");
+		scnr.reset();
 		System.out.print("Enter Cheese: ");
 		String userCheese = Validator.getStringWithValidInformation(scnr, "");
-		scnr.nextLine();
 		System.out.print("Enter meat: ");
 		String userMeat = Validator.getStringWithValidInformation(scnr, "");
-		scnr.nextLine();
 		System.out.print("Egg? Yes or no ");
 		String userEgg = Validator.YesOrNo(scnr, "");
 		Sandwich userSandwhich = new Sandwich(name, description, price, category, userBread, userCheese, userMeat,

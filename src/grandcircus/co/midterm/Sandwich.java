@@ -58,7 +58,7 @@ public class Sandwich extends Product {
 	// toString
 	@Override
 	public String toString() {
-		return "Sandwich [bread=" + bread + ", cheese=" + cheese + ", meat=" + meat + ", egg=" + egg + "]";
+		return "Bread: " + bread + ", Cheese: " + cheese + ", Meat: " + meat + ", Egg: " + egg;
 	}
 
 }

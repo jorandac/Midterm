@@ -38,28 +38,25 @@ public class JavaBeansStoreApp {
 
 			// if user chooses a drink, have user choose hot or iced, and drink size
 			if (menu.get(productChoice).getcategory().equals("drink")) {
-				
+
 				// set temporary drink variable to store user choice
 				Drink myDrink = (Drink) menu.get(productChoice);
-				String drinkTemp = Validator.getStringIcedOrHot(scnr,
-						"\nWould you like your drink hot or iced? ");
+				String drinkTemp = Validator.getStringIcedOrHot(scnr, "\nWould you like your drink hot or iced? ");
 				scnr.reset();
 
-				//set temporary drink variable to store user choice
+				// set temporary drink variable to store user choice
 				myDrink.setTemperature(drinkTemp);
-				
-				
-				String drinkSize = Validator.getStringSize(scnr, "\nWould you like your drink small, medium, or large? ");
+
+				String drinkSize = Validator.getStringSize(scnr, "Would you like your drink small, medium, or large? ");
 				myDrink.setSize(drinkSize);
 				scnr.reset();
 
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
 
-				
-				//add product to shopping cart
+				// add product to shopping cart
 				CartItem myNewItem = new CartItem(myDrink, quantity);
 				shoppingCart.add(myNewItem);
-				
+
 				int num = 1;
 				for (CartItem cartItem : shoppingCart) {
 					System.out.println(num + ". " + cartItem);
@@ -72,21 +69,24 @@ public class JavaBeansStoreApp {
 
 			if (menu.get(productChoice).getName().contains("Breakfast Sandwich")) {
 
-				Sandwich mySandwich = (Sandwich) menu.get(productChoice);
-				String bread = Validator.getString(scnr, "\nWhat type of bread would you like? ");
-				mySandwich.setBread(bread);
-
-				String cheese = Validator.getString(scnr, "\nWhat type of cheese would you like? ");
-				mySandwich.setCheese(cheese);
-
-				String meat = Validator.getString(scnr, "\nWhat type of meat would you like? ");
-				mySandwich.setMeat(meat);
+				Sandwich mySandwich = StoreMethods.buildSandwich(menu.get(productChoice).getName(),
+						menu.get(productChoice).getDescription(), menu.get(productChoice).getPrice(),
+						menu.get(productChoice).getcategory());
 
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
 
 				// add product to shopping cart
 				CartItem myNewItem = new CartItem(mySandwich, quantity);
 				shoppingCart.add(myNewItem);
+
+				int num = 1;
+				for (CartItem cartItem : shoppingCart) {
+					System.out.println(num + ". " + cartItem);
+					num++;
+				}
+
+				// extra line for readability
+				System.out.println();
 
 			}
 			// TODO: store user choice in ArrayList
@@ -165,7 +165,6 @@ public class JavaBeansStoreApp {
 //					
 //					// TODO: display receipt
 //					StoreMethods.displayReceipt(menu);
-				}
+	}
 
-			}
-		
+}
