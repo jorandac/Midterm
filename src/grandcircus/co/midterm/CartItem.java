@@ -1,14 +1,18 @@
 package grandcircus.co.midterm;
 
-public class CartItem extends Product{
+public class CartItem extends Product {
 
 	private Product product;
 
 	private int quantity;
 
-	public CartItem(Product product, int quantity) {
+	private double price;
+
+	public CartItem(Product product, int quantity, double price) {
+
 		this.product = product;
 		this.quantity = quantity;
+		this.price = price;
 	}
 
 	public CartItem() {
@@ -29,6 +33,14 @@ public class CartItem extends Product{
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 
 	@Override

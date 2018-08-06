@@ -1,5 +1,6 @@
 package grandcircus.co.midterm;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -28,10 +29,14 @@ public class StoreMethods {
 	public static double getTotal(List<CartItem> shoppingCart) {
 
 		double total = 0;
-		double salesTax = 0.06;
+		double salesTax = 1.06;
 
 		for (Product product : shoppingCart) {
-			total += product.getPrice();
+
+			double price = product.getPrice();
+
+			total = price;
+
 		}
 
 		return total * salesTax;
@@ -101,13 +106,14 @@ public class StoreMethods {
 
 	// Display receipt
 	public static void displayReceipt(List<CartItem> shoppingCart, double total) {
+		DecimalFormat df = new DecimalFormat("#.##");
 		System.out.println("Thank you for shopping at Java Beans!");
 		int num = 1;
 		for (Product product : shoppingCart) {
 			System.out.println(num + " " + product);
 		}
 
-		System.out.println("Your total is: " + total);
+		System.out.println("Your total is: " + df.format(total));
 
 	}
 

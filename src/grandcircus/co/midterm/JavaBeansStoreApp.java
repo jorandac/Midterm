@@ -4,6 +4,7 @@
 
 package grandcircus.co.midterm;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -52,10 +53,13 @@ public class JavaBeansStoreApp {
 				scnr.reset();
 
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
+				double price = myDrink.getPrice();
 
 				// add product to shopping cart
-				CartItem myNewItem = new CartItem(myDrink, quantity);
+				CartItem myNewItem = new CartItem(myDrink, quantity, price);
 				shoppingCart.add(myNewItem);
+//				System.out.println(shoppingCart.get(0).getPrice());
+//				System.out.println(shoppingCart.get(0).getQuantity());
 
 				int num = 1;
 				for (CartItem cartItem : shoppingCart) {
@@ -74,9 +78,9 @@ public class JavaBeansStoreApp {
 						menu.get(productChoice).getcategory());
 
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
-
+				double price = mySandwich.getPrice();
 				// add product to shopping cart
-				CartItem myNewItem = new CartItem(mySandwich, quantity);
+				CartItem myNewItem = new CartItem(mySandwich, quantity, price);
 				shoppingCart.add(myNewItem);
 
 				int num = 1;
@@ -90,7 +94,8 @@ public class JavaBeansStoreApp {
 
 			} else {
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
-				CartItem myNewItem = new CartItem(menu.get(productChoice), quantity);
+				double price = menu.get(productChoice).getPrice();
+				CartItem myNewItem = new CartItem(menu.get(productChoice), quantity, price);
 				shoppingCart.add(myNewItem);
 
 				int num = 1;
@@ -108,12 +113,14 @@ public class JavaBeansStoreApp {
 		} while (userContinues.matches("yes"));
 
 		// TODO: display subtotal
+		DecimalFormat df = new DecimalFormat("#.##");
 		double shoppingCartTotal = StoreMethods.getTotal(shoppingCart);
+		System.out.println(df.format(shoppingCartTotal));
 
 		// TODO: Ask for Payment Type: Switch/Case
 
-		int paymentChoice = Validator.getIntPaymentType(scnr, "How would you like to pay? Enter 1 for cash, "
-				+ "2 for credit, or 3 for check. ", 1, 3);
+		int paymentChoice = Validator.getIntPaymentType(scnr,
+				"How would you like to pay? Enter 1 for cash, " + "2 for credit, or 3 for check. ", 1, 3);
 		System.out.println(); // Blank Line for Readability
 
 		switch (paymentChoice) {
