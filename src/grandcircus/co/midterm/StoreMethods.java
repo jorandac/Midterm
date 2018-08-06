@@ -31,12 +31,20 @@ public class StoreMethods {
 		double total = 0;
 		double salesTax = 1.06;
 
+<<<<<<< HEAD
 		for (Product product : shoppingCart) {
 
 			double price = product.getPrice();
 
 			total = price;
 
+=======
+		for (CartItem product : shoppingCart) {
+			double newPrice = product.getPrice();
+			
+			System.out.println(newPrice);
+			total += product.getPrice();
+>>>>>>> 19bc85c7b2d6214a5f06268993be2bed932fefed
 		}
 
 		return total * salesTax;

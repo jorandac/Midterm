@@ -115,7 +115,11 @@ public class JavaBeansStoreApp {
 		// TODO: display subtotal
 		DecimalFormat df = new DecimalFormat("#.##");
 		double shoppingCartTotal = StoreMethods.getTotal(shoppingCart);
+<<<<<<< HEAD
 		System.out.println(df.format(shoppingCartTotal));
+=======
+		System.out.println(shoppingCartTotal);
+>>>>>>> 19bc85c7b2d6214a5f06268993be2bed932fefed
 
 		// TODO: Ask for Payment Type: Switch/Case
 
