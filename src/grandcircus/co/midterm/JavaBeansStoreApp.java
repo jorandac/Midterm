@@ -42,15 +42,17 @@ public class JavaBeansStoreApp {
 				Drink myDrink = (Drink) menu.get(productChoice);
 				String drinkTemp = Validator.getStringIcedOrHot(scnr,
 						"\nWould you like your drink hot or iced? ");
+				
 				scnr.reset();
-
 				//set temporary drink variable to store user choice
 				myDrink.setTemperature(drinkTemp);
+			
 				
 				
 				String drinkSize = Validator.getStringSize(scnr, "\nWould you like your drink small, medium, or large? ");
 				myDrink.setSize(drinkSize);
 				scnr.reset();
+				
 
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
 
