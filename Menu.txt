@@ -1,13 +1,13 @@
-Espresso	drink	lorem ipsum dolor sit amet	2.25
-Cappucino	drink	lorem ipsum dolor sit amet	2.50
-Cafe Americano	drink	lorem ipsum dolor sit amet	3.25
-Cafe Latte	drink	lorem ipsum dolor sit amet	1.50
+Espresso	drink	Sweet in taste, Rich in flavor with a hint of caramel	2.25
+Cappucino	drink	Dark with smooth layer of sweet thick foam	2.50
+Cafe Americano	drink	Espresso shots topped with hot water to produce a light layer of crema	3.25
+Cafe Latte	drink	A perfect touch of milk, rich espresso and light sweet layer of foam	1.50
 Chai	drink	Black tea infused with spices	2.75
 Black Tea	drink	A lovely alternative to coffee to start your day	1.25
 Green Tea	drink	A refreshing light taste that is also good for you!	1.50
 Blueberry Muffin	food	Just like Mom used to make, with a light brown sugar topping	2.50
-Pumpkin Spice Muffin	food	lorem ipsum dolor sit amet	2.50
-Banana Bread	food	lorem ipsum dolor sit amet	2.50
-Chocolate Chip Cookie	food	lorem ipsum dolor sit amet	1.25
-Oatmeal Raisin Cookie	food	lorem ipsum dolor sit amet	1.25
-Breakfast Sandwich	food	lorem ipsum dolor sit amet	4.25
+Pumpkin Spice Muffin	food	Topped with a creamy cinnamon butter spread and a rich pumpkin taste	2.50
+Banana Bread	food	Super moist and delicious with loads of banana flavor	2.50
+Chocolate Chip Cookie	food	Loaded with chocolate chips and baked to soft, warm perfection	1.25
+Oatmeal Raisin Cookie	food	A soft and chewy blend of oats and raisins makes this cookie a delicious favorite	1.25
+Breakfast Sandwich	food	Get your morning started with a delicious sandwich. Your choice of bread, meat, and option to add a homestyle egg	4.25
