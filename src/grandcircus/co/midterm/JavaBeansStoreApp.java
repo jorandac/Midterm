@@ -117,6 +117,7 @@ public class JavaBeansStoreApp {
 		System.out.println(); // Blank Line for Readability
 
 		switch (paymentChoice) {
+
 		case 1:
 			// Cash Method
 			System.out.println("Enter your Cash Amount");
@@ -142,7 +143,7 @@ public class JavaBeansStoreApp {
 			break;
 
 		}
-		System.out.println("Thank you for shopping with us. Enjoy your day!");
+//		System.out.println("Thank you for shopping with us. Enjoy your day!");
 
 		// TODO: display receipt
 		StoreMethods.displayReceipt(shoppingCart, shoppingCartTotal);

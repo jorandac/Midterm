@@ -102,13 +102,12 @@ public class StoreMethods {
 	// Display receipt
 	public static void displayReceipt(List<CartItem> shoppingCart, double total) {
 		System.out.println("Thank you for shopping at Java Beans!");
-	    int num = 1; 
-	    for (Product product: shoppingCart) {
-	    	System.out.println(num + " " + product);
-	    }
-		
-	    	System.out.println("Your total is: " + total);
-		
+		int num = 1;
+		for (Product product : shoppingCart) {
+			System.out.println(num + " " + product);
+		}
+
+		System.out.println("Your total is: " + total);
 
 	}
 
