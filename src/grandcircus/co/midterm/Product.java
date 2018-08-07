@@ -2,6 +2,7 @@ package grandcircus.co.midterm;
 
 public class Product {
 
+	// Class Variables
 	private String name;
 	private String description;
 	private double price;
@@ -54,15 +55,11 @@ public class Product {
 		this.price = price;
 	}
 
+	// toString
 	@Override
 	public String toString() {
 
 		return name + ": $" + price + " \n\t" + description;
 	}
-
-//	public String toString2() {
-//
-//		return name + ": $" + price + " \n\t";
-//	}
 
 }

@@ -2,17 +2,18 @@ package grandcircus.co.midterm;
 
 public class Check extends Payment {
 
+	// Class variables
 	private int checkNum;
 
-	//constructor
+	// constructor
 	public Check(String paymentType, double amount, int checkNum) {
 		super(paymentType, amount);
 		this.checkNum = checkNum;
 	}
-	
-	//empty constructor
+
+	// empty constructor
 	public Check() {
-		
+
 	}
 
 	// getter
@@ -20,7 +21,7 @@ public class Check extends Payment {
 		return checkNum;
 	}
 
-	//setter
+	// setter
 	public void setCheckNum(int checkNum) {
 		this.checkNum = checkNum;
 	}
@@ -29,8 +30,5 @@ public class Check extends Payment {
 	public String toString() {
 		return "Check [checkNum=" + checkNum + "]";
 	}
-	
-	
-	
-	
+
 }

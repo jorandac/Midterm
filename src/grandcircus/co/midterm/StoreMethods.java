@@ -11,7 +11,7 @@ public class StoreMethods {
 	// Scanner
 	static Scanner scnr = new Scanner(System.in);
 
-	// display menu
+	// Method to Display Menu
 	public static void displayMenu(List<Product> products) {
 
 		int num = 1;
@@ -27,7 +27,7 @@ public class StoreMethods {
 
 	}
 
-	// Get Total
+	// Method To Get Total
 	public static double getTotal(List<CartItem> shoppingCart) {
 
 		double total = 0;
@@ -46,6 +46,7 @@ public class StoreMethods {
 
 	}
 
+	// Method to Display The Sum of the shopping cart
 	public static void displaySum(List<CartItem> shoppingCart) {
 
 		int num = 1;
@@ -53,7 +54,6 @@ public class StoreMethods {
 		System.out.println("  " + "  Product\t\t\t" + "Quantity" + "\tPrice");
 		System.out.println(" ===================================================");
 		for (CartItem cartItem : shoppingCart) {
-//			System.out.println(i + ".  " + cartItem.getName());
 			System.out.printf("%2d. ", num++);
 			System.out.printf("%-21s ", cartItem.getProduct().getName());
 			System.out.printf("%10d", cartItem.getQuantity());
@@ -67,7 +67,7 @@ public class StoreMethods {
 
 	}
 
-	// Display total
+	// Method to Display Cart Total
 	public static void displayTotal(double total, List<Product> products) {
 
 		int num = 1;
@@ -127,7 +127,7 @@ public class StoreMethods {
 		int randomYear = ThreadLocalRandom.current().nextInt(22, 28);
 		expYear = expYear + "" + randomYear;
 
-		// Random cvv
+		// Random Cvv
 		for (int i = 0; i < 3; i++) {
 			int randomCvv = ThreadLocalRandom.current().nextInt(1, 9);
 			cvv = cvv + "" + randomCvv;
@@ -172,7 +172,7 @@ public class StoreMethods {
 //			System.out.println(num + " " + product);
 //		}
 
-		System.out.println("Your total is: " + df.format(total));
+		System.out.println("Your total is: $" + df.format(total));
 
 	}
 

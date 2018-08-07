@@ -71,7 +71,11 @@ public class Validator {
 		} while (!isValid);
 		return number - 1;
 	}
-	
+
+	/**
+	 * Get any valid integer between min and max.
+	 */
+
 	public static int getIntPaymentType(Scanner scnr, String prompt, int min, int max) {
 		boolean isValid = false;
 		int number;

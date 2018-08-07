@@ -2,6 +2,7 @@ package grandcircus.co.midterm;
 
 public class Drink extends Product {
 
+	// Class variables
 	private String size;
 
 	private String temperature;

@@ -2,6 +2,7 @@ package grandcircus.co.midterm;
 
 public class Cash extends Payment {
 
+	// Class variables
 	private double changeDue;
 
 	// Default Constructor
@@ -9,9 +10,9 @@ public class Cash extends Payment {
 	public Cash() {
 
 	}
-	
-	//Constructor 
- 	Cash(String paymentType, double amount, double changeDue) {
+
+	// Constructor
+	Cash(String paymentType, double amount, double changeDue) {
 		super(paymentType, amount);
 		this.changeDue = changeDue;
 	}

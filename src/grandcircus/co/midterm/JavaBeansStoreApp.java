@@ -1,6 +1,8 @@
-//Cameron Barnes
-//JoRanda Chapman
-//Lauren Shindo
+/*
+ * Java Beans Store: 9/6/2018
+ * Created by: JoRanda Chapman, Lauren Shindo, Cameron Barnes
+ * Grand Circus Java Bootcamp
+ */
 
 package grandcircus.co.midterm;
 
@@ -12,14 +14,17 @@ import java.util.Scanner;
 public class JavaBeansStoreApp {
 
 	public static void main(String[] args) {
+
 		// Scanner
 		Scanner scnr = new Scanner(System.in);
 
 		// Product ArrayList
 		List<Product> menu = ProductFileUtil.readFile();
+
 		// Shopping cart
 		List<CartItem> shoppingCart = new ArrayList<>();
 
+		// Continue
 		String userContinues = "yes"; // keeps track of whether user wants to continue in the loop
 
 		// Welcome message to user
@@ -47,78 +52,77 @@ public class JavaBeansStoreApp {
 
 				// set temporary drink variable to store user choice
 				myDrink.setTemperature(drinkTemp);
-
 				String drinkSize = Validator.getStringSize(scnr, "Would you like your drink small, medium, or large? ");
 				myDrink.setSize(drinkSize);
 				scnr.reset();
 
+				// Get quantity
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
+
+				// Add price to object
 				double price = myDrink.getPrice();
 
 				// add product to shopping cart
 				CartItem myNewItem = new CartItem(myDrink, quantity, price);
 				shoppingCart.add(myNewItem);
-//				System.out.println(shoppingCart.get(0).g);
-//				System.out.println(shoppingCart.get(0).getQuantity());
 
+				// Display items in cart and sum
 				StoreMethods.displaySum(shoppingCart);
 
 				// extra line for readability
 				System.out.println();
 			}
-
+			// if user chooses a sandwich, have user choose bread, cheese and meat
 			else if (menu.get(productChoice).getName().contains("Breakfast Sandwich")) {
 
+				// set temporary sandwich variable to store user choice
 				Sandwich mySandwich = StoreMethods.buildSandwich(menu.get(productChoice).getName(),
 						menu.get(productChoice).getDescription(), menu.get(productChoice).getPrice(),
 						menu.get(productChoice).getcategory());
 
+				// Get quantity
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
+
+				// add price to object
 				double price = mySandwich.getPrice();
+
 				// add product to shopping cart
 				CartItem myNewItem = new CartItem(mySandwich, quantity, price);
 				shoppingCart.add(myNewItem);
 
-				int num = 1;
-				for (CartItem cartItem : shoppingCart) {
-					System.out.println(num + ". " + cartItem);
-					num++;
-				}
-
+				// Display items in cart
 				StoreMethods.displaySum(shoppingCart);
 
 				// Extra Line for Readability
 				System.out.println();
 
+				// if user chooses any other item in store, get quantity and add it to the
+				// shopping cart
 			} else {
+				// Get quantity
 				int quantity = Validator.getInt(scnr, "How many would you like? ");
+				// Add price to object
 				double price = menu.get(productChoice).getPrice();
 				CartItem myNewItem = new CartItem(menu.get(productChoice), quantity, price);
 				shoppingCart.add(myNewItem);
 
-				int num = 1;
-				for (CartItem cartItem : shoppingCart) {
-					System.out.println(num + ". " + cartItem);
-					num++;
-				}
-
+				// Display items in cart
 				StoreMethods.displaySum(shoppingCart);
 
 			}
-			// TODO: store user choice in ArrayList
+
 			scnr.nextLine(); // clear scanner
+
 			// Ask if user wants to add more items , loop ends here
 			userContinues = Validator.YesOrNo(scnr, "\nWould you like to add anything else to your order? (yes/no) ");
 
 		} while (userContinues.matches("yes"));
 
-		// TODO: display subtotal
+		// display subTotal
 		DecimalFormat df = new DecimalFormat("#.##");
 		double shoppingCartTotal = StoreMethods.getTotal(shoppingCart);
-//		System.out.println(df.format(shoppingCartTotal));
 
-		// TODO: Ask for Payment Type: Switch/Case
-
+		// Ask for Payment Type: Switch/Case
 		int paymentChoice = Validator.getIntPaymentType(scnr,
 				"How would you like to pay? Enter 1 for cash, " + "2 for credit, or 3 for check. ", 1, 3);
 		System.out.println(); // Blank Line for Readability
@@ -151,11 +155,9 @@ public class JavaBeansStoreApp {
 			break;
 
 		}
-//		System.out.println("Thank you for shopping with us. Enjoy your day!");
 
-		// TODO: display receipt
+		// display receipt
 		StoreMethods.displayReceipt(shoppingCart, shoppingCartTotal);
 	}
 
-	// add comment to push
 }

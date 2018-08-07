@@ -4,10 +4,12 @@ public class CartItem extends Product {
 
 	private Product product;
 
+	// Class variables
 	private int quantity;
 
 	private double price;
 
+	// Constructors
 	public CartItem(Product product, int quantity, double price) {
 
 		this.product = product;
@@ -19,6 +21,7 @@ public class CartItem extends Product {
 
 	}
 
+	// Getters and Setters
 	public Product getProduct() {
 		return product;
 	}
@@ -43,6 +46,7 @@ public class CartItem extends Product {
 		this.price = price;
 	}
 
+	// ToString
 	@Override
 	public String toString() {
 		return product + "\t " + "Quantity: " + quantity;

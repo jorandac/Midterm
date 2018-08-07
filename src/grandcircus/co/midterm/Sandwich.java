@@ -2,6 +2,7 @@ package grandcircus.co.midterm;
 
 public class Sandwich extends Product {
 
+	// Class Variables
 	private String bread;
 	private String cheese;
 	private String meat;
