@@ -5,6 +5,7 @@ import java.text.DecimalFormatSymbols;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
 
 public class StoreMethods {
 
@@ -170,6 +171,12 @@ public class StoreMethods {
 		System.out.println("   [_])   [_])   [_])   [_])  [_])  [_])  \n");
 
 		System.out.println("Printing Receipt...\n");
+		try {
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		displaySum(shoppingCart);
 //		int num = 1;
