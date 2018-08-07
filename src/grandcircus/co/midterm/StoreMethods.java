@@ -163,7 +163,12 @@ public class StoreMethods {
 	// Display receipt
 	public static void displayReceipt(List<CartItem> shoppingCart, double total) {
 		DecimalFormat df = new DecimalFormat("#.##");
-		System.out.println("Thank you for shopping at Java Beans!");
+		System.out.println("Thank you for shopping at Java Beans!\n");
+
+		System.out.println("     )      )      )      )     )     )");
+		System.out.println("    (      (      (      (     (     (");
+		System.out.println("   [_])   [_])   [_])   [_])  [_])  [_])  \n");
+
 		System.out.println("Printing Receipt...\n");
 
 		displaySum(shoppingCart);
