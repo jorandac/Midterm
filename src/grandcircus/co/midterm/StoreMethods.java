@@ -61,8 +61,9 @@ public class StoreMethods {
 			System.out.printf("%12.12s", priceStr);
 			System.out.println();
 			sum += cartItem.getProduct().getPrice() * cartItem.getQuantity();
-			System.out.println("\n Subtotal (not including tax/deposit): $" + sum);
+
 		}
+		System.out.println("\n Subtotal (not including tax/deposit): $" + sum);
 
 	}
 
@@ -165,10 +166,11 @@ public class StoreMethods {
 		System.out.println("Thank you for shopping at Java Beans!");
 		System.out.println("Printing Receipt...\n");
 
-		int num = 1;
-		for (Product product : shoppingCart) {
-			System.out.println(num + " " + product);
-		}
+		displaySum(shoppingCart);
+//		int num = 1;
+//		for (Product product : shoppingCart) {
+//			System.out.println(num + " " + product);
+//		}
 
 		System.out.println("Your total is: " + df.format(total));
 
