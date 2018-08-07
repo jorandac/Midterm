@@ -18,7 +18,8 @@ public class StoreMethods {
 
 		for (Product product : products) {
 
-			System.out.println(num + ". " + product.getName() + "\t$" + product.getPrice() + "\n\t" + product.getDescription() + "\n");
+			System.out.println(num + ". " + product.getName() + "\t$" + product.getPrice() + "\n\t"
+					+ product.getDescription() + "\n");
 
 			num++;
 
@@ -32,15 +33,36 @@ public class StoreMethods {
 		double total = 0;
 		double salesTax = 1.06;
 
-		for (Product product : shoppingCart) {
+		for (CartItem product : shoppingCart) {
 
 			double price = product.getPrice();
+			double quantity = product.getQuantity();
 
-			total = price;
-
+			price = price * quantity;
+			total += price;
 		}
 
 		return total * salesTax;
+
+	}
+
+	public static void displaySum(List<CartItem> shoppingCart) {
+
+		int num = 1;
+		double sum = 0;
+		System.out.println("  " + "  Product\t\t\t" + "Quantity" + "\tPrice");
+		System.out.println(" ===================================================");
+		for (CartItem cartItem : shoppingCart) {
+//			System.out.println(i + ".  " + cartItem.getName());
+			System.out.printf("%2d. ", num++);
+			System.out.printf("%-21s ", cartItem.getProduct().getName());
+			System.out.printf("%10d", cartItem.getQuantity());
+			String priceStr = "$" + String.format("%.2f", cartItem.getProduct().getPrice());
+			System.out.printf("%12.12s", priceStr);
+			System.out.println();
+			sum += cartItem.getProduct().getPrice() * cartItem.getQuantity();
+			System.out.println("\n Subtotal (not including tax/deposit): $" + sum);
+		}
 
 	}
 
@@ -66,10 +88,11 @@ public class StoreMethods {
 	public static double cashMethod(double amount, double total) {
 
 		// Calculates change and returns string to call when printing receipt
-
+		DecimalFormat df = new DecimalFormat("#.##");
 		double change = total - amount;
+		String changeFormat = df.format(change);
 
-		return change;
+		return Double.parseDouble(changeFormat);
 
 	}
 	// Credit Card Method (input card information)

@@ -61,24 +61,7 @@ public class JavaBeansStoreApp {
 //				System.out.println(shoppingCart.get(0).g);
 //				System.out.println(shoppingCart.get(0).getQuantity());
 
-				int num = 1;
-				double sum = 0;
-				System.out.println("  " + "  Product\t\t\t" + "Quantity" + "\tPrice");
-				System.out.println(" ===================================================");
-				for (CartItem cartItem : shoppingCart) {
-//					System.out.println(i + ".  " + cartItem.getName());
-					System.out.printf("%2d. ",  num++);
-					System.out.printf("%-21s ",  cartItem.getProduct().getName());
-					System.out.printf("%10d", cartItem.getQuantity());
-				    String priceStr = "$" + String.format("%.2f",  cartItem.getProduct().getPrice());
-				    System.out.printf("%12.12s", priceStr);
-				    System.out.println();
-				    sum += cartItem.getProduct().getPrice() * cartItem.getQuantity();
-				    System.out.println("\n Subtotal (not including tax/deposit): $" + sum);
-				
-				
-				
-				}
+				StoreMethods.displaySum(shoppingCart);
 
 				// extra line for readability
 				System.out.println();
@@ -102,6 +85,8 @@ public class JavaBeansStoreApp {
 					num++;
 				}
 
+				StoreMethods.displaySum(shoppingCart);
+
 				// Extra Line for Readability
 				System.out.println();
 
@@ -116,6 +101,8 @@ public class JavaBeansStoreApp {
 					System.out.println(num + ". " + cartItem);
 					num++;
 				}
+
+				StoreMethods.displaySum(shoppingCart);
 
 			}
 			// TODO: store user choice in ArrayList
