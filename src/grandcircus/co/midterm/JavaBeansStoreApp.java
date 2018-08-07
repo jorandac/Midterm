@@ -58,7 +58,7 @@ public class JavaBeansStoreApp {
 				// add product to shopping cart
 				CartItem myNewItem = new CartItem(myDrink, quantity, price);
 				shoppingCart.add(myNewItem);
-//				System.out.println(shoppingCart.get(0).getPrice());
+//				System.out.println(shoppingCart.get(0).g);
 //				System.out.println(shoppingCart.get(0).getQuantity());
 
 				int num = 1;

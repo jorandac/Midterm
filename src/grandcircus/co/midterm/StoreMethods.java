@@ -1,6 +1,7 @@
 package grandcircus.co.midterm;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -77,23 +78,31 @@ public class StoreMethods {
 
 		String customerInformation = null;
 		String cardNumber = "";
-		String exp = "";
+		String expMonth = "";
+		String expYear = "";
 		String cvv = "";
 		DecimalFormat df = new DecimalFormat("#.##");
+		DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+		symbols.setGroupingSeparator(' ');
+		DecimalFormat fmt = new DecimalFormat("0000,0000,0000,0000", symbols);
 
-		// Credit card numbe
+		// Credit card number
 		for (int i = 0; i < 16; i++) {
 			int randomCreditCardNumber = ThreadLocalRandom.current().nextInt(1, 9);
 			cardNumber = cardNumber + "" + randomCreditCardNumber;
 
 		}
 
-		// Random Exp Date
-		for (int i = 0; i < 4; i++) {
-			int randomExp = ThreadLocalRandom.current().nextInt(1, 9);
-			exp = exp + "" + randomExp;
+		// Random ExpMonth
 
-		}
+		int randomExp = ThreadLocalRandom.current().nextInt(1, 12);
+		expMonth = expMonth + "" + randomExp;
+
+		// Random ExpYear
+
+		int randomYear = ThreadLocalRandom.current().nextInt(22, 28);
+		expYear = expYear + "" + randomYear;
+
 		// Random cvv
 		for (int i = 0; i < 3; i++) {
 			int randomCvv = ThreadLocalRandom.current().nextInt(1, 9);
@@ -101,8 +110,8 @@ public class StoreMethods {
 
 		}
 
-		customerInformation = "Name: " + name + " Card number: " + cardNumber + "Exp date: " + exp + "Cvv: " + cvv
-				+ "Total: $" + df.format(total);
+		customerInformation = "Name: " + name + ": Card number: " + fmt.format(Double.parseDouble(cardNumber))
+				+ " Exp date: " + expMonth + "\\" + expYear + " Cvv: " + cvv + " Total: $" + df.format(total);
 
 		return customerInformation;
 
@@ -121,7 +130,7 @@ public class StoreMethods {
 			checkNumber = checkNumber + "" + randomCheckNumber;
 
 		}
-		customerInformation = "Name: " + name + " Check number " + checkNumber + "# " + "Total: $" + df.format(total);
+		customerInformation = "Name: " + name + " Check number: " + "#" + checkNumber + " Total: $" + df.format(total);
 
 		return customerInformation;
 
@@ -131,6 +140,7 @@ public class StoreMethods {
 	public static void displayReceipt(List<CartItem> shoppingCart, double total) {
 		DecimalFormat df = new DecimalFormat("#.##");
 		System.out.println("Thank you for shopping at Java Beans!");
+		System.out.println("Printing Receipt...\n");
 
 		int num = 1;
 		for (Product product : shoppingCart) {
