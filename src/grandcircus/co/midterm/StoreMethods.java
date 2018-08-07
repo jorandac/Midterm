@@ -170,13 +170,28 @@ public class StoreMethods {
 		System.out.println("    (      (      (      (     (     (");
 		System.out.println("   [_])   [_])   [_])   [_])  [_])  [_])  \n");
 
-		System.out.println("Printing Receipt...\n");
+		System.out.print("Printing Receipt.");
 		try {
-			TimeUnit.SECONDS.sleep(3);
+			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.print(".");
+		try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.print(".");
+		try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(".\n");
 
 		displaySum(shoppingCart);
 //		int num = 1;
