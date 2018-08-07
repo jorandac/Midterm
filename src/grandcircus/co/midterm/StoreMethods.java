@@ -17,7 +17,7 @@ public class StoreMethods {
 
 		for (Product product : products) {
 
-			System.out.println(num + ". " + product);
+			System.out.println(num + ". " + product.getName() + "\t$" + product.getPrice() + "\n\t" + product.getDescription() + "\n");
 
 			num++;
 

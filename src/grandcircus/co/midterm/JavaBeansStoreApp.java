@@ -62,9 +62,22 @@ public class JavaBeansStoreApp {
 //				System.out.println(shoppingCart.get(0).getQuantity());
 
 				int num = 1;
+				double sum = 0;
+				System.out.println("  " + "  Product\t\t\t" + "Quantity" + "\tPrice");
+				System.out.println(" ===================================================");
 				for (CartItem cartItem : shoppingCart) {
-					System.out.println(num + ". " + cartItem);
-					num++;
+//					System.out.println(i + ".  " + cartItem.getName());
+					System.out.printf("%2d. ",  num++);
+					System.out.printf("%-21s ",  cartItem.getProduct().getName());
+					System.out.printf("%10d", cartItem.getQuantity());
+				    String priceStr = "$" + String.format("%.2f",  cartItem.getProduct().getPrice());
+				    System.out.printf("%12.12s", priceStr);
+				    System.out.println();
+				    sum += cartItem.getProduct().getPrice() * cartItem.getQuantity();
+				    System.out.println("\n Subtotal (not including tax/deposit): $" + sum);
+				
+				
+				
 				}
 
 				// extra line for readability
